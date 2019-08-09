@@ -74,7 +74,7 @@ $ uname -r
 ```
 - you will see 5.3.2 kernel version.
 
-## 5. Get TCG tpm2.0 spec event log in file
+## 5. Get TCG tpm2.0 spec event log
 ```bash  
 $ cat /sys/kernel/security/tpm0/binary_bios_measurements > temp 
 $ hexdump -C temp | more , will show you tpm2.0 eventlogs 
