@@ -10,14 +10,14 @@
 7. [FAQ](#7-faq)
 
 
-# 1. Introduction
+## 1. Introduction
   A collection of references to attestation projects, instructions, application notes, and glue code, hints, requests for new projects, etc.
-# 2. Why repo?
+## 2. Why repo?
 - tool.c is the main program which parses the tpm2.- TCG eventlog and generates different outputs based on parameters provided
 - tool.sh is a script to run the tests on selected binary dump data for bios_runtime measurements and it generates the report in results.txt file at the end. 
 
 
-# 3. Steps for CentOS-7 kernel upgrade
+## 3. Steps for CentOS-7 kernel upgrade
 
 
 - Centos7 latest installed on baremetal system with TPM2.0 (this device will be working as our provisioner/ client) 
@@ -43,7 +43,7 @@ $ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-
 
 after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
 
-# 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
+## 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
 
 - cd /usr/src/kernels
 - cp *.patch /root/rpmbuild/BUILD/ 
@@ -57,7 +57,7 @@ after this steps you have the base kernel required to patch for adding support f
 - cat /sys/kernel/security/tpm0/binary_bios_measurements > temp 
 - hexdump -C temp | more , will show you tpm2.0 eventlogs 
 
-# 5. Steps to run Utility 
+## 5. Steps to run Utility 
 
 - download the supplied Utility folder into some place of your choice and copy temp into it 
 - gcc -o tool tool.c -std=c99
@@ -69,7 +69,7 @@ after this steps you have the base kernel required to patch for adding support f
 - ./tool.sh , will run all the tests and puts the results of each run in results folder 
 - it will also open the report.txt on terminal 
 
-# 6. Steps to change EFI setting for allowing hash Algorithm support(optional)
+## 6. Steps to change EFI setting(optional)
 
 - Hash algorithms are bit mapped as following 
   Bit 0: SHA-1
@@ -81,4 +81,4 @@ so to set it in bios EFI run following command
 - while reboot kernel will ask you to confirm Hash algorithm change press F12 for intel bios 
 - if you have selected SHA-1 and SHA-256 then you should see two PCR banks when you run 
 - tpm2_pcrlist (this step requires tpm2-tss, tpm2-abrmd and tpm2-tools installed) if you don't have it yet run the utility against new blob and you should see events having selected Hashing algorithms
-# 7.faq
+## 7.faq
