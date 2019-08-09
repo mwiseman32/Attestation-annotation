@@ -1,18 +1,31 @@
 # Attestation-annotation
 A collection of references to attestation projects, instructions, application notes, and glue code, hints, requests for new projects, etc.
-# Utility Scope
+## Contents
+1. [Introduction](#1-introduction)
+2. [Why repo?](#2-why-repo)
+3. [Utility Scope](#3-Utility Scope)
+4. [Steps for centOS-7  kernel upgrade](#4-Steps for centOS-7 kernel upgrade)
+5. [Platforms supported by build.git](#5-platforms-supported-by-buildgit)
+6. [Manifests](#6-manifests)
+7. [Get and build the solution](#7-get-and-build-the-solution)
+8. [FAQ](#8-faq)
 
+
+# 1. Introduction
+# 2. Why repo?
+
+# 3.Utility Scope
 - tool.c is the main program which parses the tpm2.- TCG eventlog and generates different outputs based on parameters provided
 - tool.sh is a script to run the tests on selected binary dump data for bios_runtime measurements and it generates the report in results.txt file at the end. 
 
 
-# Steps for centOS-7  kernel upgrade
+# 4. Steps for centOS-7  kernel upgrade
 
 
 - Centos7 latest installed on baremetal system with TPM2.0 (this device will be working as our provisioner/ client) 
 - as centos latest kernel-3.10 doesnot have required eventlogs we need to upgrade the kernel to latest linux tree. at the time of writing this latest stable linux is 5.2.2. 
 - install all dependancies for kernel upgrade
-# yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-devel rpm-build 
+$ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-devel rpm-build 
 
 - download latest linux kernel from https://www.kernel.org tarball and extract (tar xvf ) it. 
 - cd  linux-5.2.2
@@ -66,4 +79,4 @@ so to set it in bios EFI run following command
 - reboot 
 - while reboot kernel will ask you to confirm Hash algorithm change press F12 for intel bios 
 - if you have selected SHA-1 and SHA-256 then you should see two PCR banks when you run 
-- tpm2_pcrlist (this step requires tpm2-tss, tpm2-abrmd and tpm2-tools installed) if you don't have it yet run the utility agenst new blob and you should see events having selected Hashing algorithms
+- tpm2_pcrlist (this step requires tpm2-tss, tpm2-abrmd and tpm2-tools installed) if you don't have it yet run the utility against new blob and you should see events having selected Hashing algorithms
