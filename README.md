@@ -81,4 +81,4 @@ so to set it in bios EFI run following command
 - while reboot kernel will ask you to confirm Hash algorithm change press F12 for intel bios 
 - if you have selected SHA-1 and SHA-256 then you should see two PCR banks when you run 
 - tpm2_pcrlist (this step requires tpm2-tss, tpm2-abrmd and tpm2-tools installed) if you don't have it yet run the utility against new blob and you should see events having selected Hashing algorithms
-# 8.faq
+# 7.faq
