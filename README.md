@@ -44,10 +44,13 @@ $ sudo make rpm-pkg
 # rpm -iUv *.rpm (to update the new kernel) 
 # reboot
 ```
-- after reboot login to the new kernel and run  "#uname -r " you should see latest kernel version isntalled in centos 
+- after reboot login to the new kernel and run  
+```bash 
+$ uname -r 
+``` 
+- you should see latest kernel version isntalled in centos 
 
-
-after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
+- after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
 
 ## 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
 ```bash
@@ -66,7 +69,7 @@ $ rpm -iUv *.rpm
 ```
 - this will install patched kernel
 ```bash
-# reboot 
+$ sudo reboot 
 ```
 - and login into new kernel, run following command to verify your new patched kernel version
 ```bash 
@@ -105,8 +108,11 @@ $ ./tool.sh
   Bit 2: SHA-384 
 so to set it in bios EFI run following command
 ```bash
-# echo 23 b > /sys/class/tpm/tpm0/ppi/request ,where ‘b’ is an integer interpreted as a bitmask 
-# reboot 
+$ sudo echo 23 b > /sys/class/tpm/tpm0/ppi/request 
+```
+- where ‘b’ is an integer interpreted as a bitmask 
+```bash 
+$ sudo reboot 
 ```
 - while reboot kernel will ask you to confirm Hash algorithm change press F12 for intel bios 
 - if you have selected SHA-1 and SHA-256 then you should see two PCR banks when you run 
