@@ -30,21 +30,24 @@ $ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-
 - change the .config to running config on your centos by running "$sudo cp -v /boot/config-* .config" 
 - make menuconfig (make changes in the kernel --this step is required for ima patches) 
 - save the new .config file 
-- ```bash
+- run following command to make sure you have atleast 30GB in your root partition
+ ```bash
   $ sudo df -h 
-  ```
-- to make sure you have atleast 30GB in your root partition 
-- $sudo make rpm-pkg  (wait for 2-3 hours based on your processor speed and memory for new kernel rpm generation) 
-- above step creats RPMS into /root/rpmbuild/RPMS/x86_64 so cd into that directory as root 
+- $sudo make rpm-pkg
+```
+- wait for 2-3 hours based on your processor speed and memory for new kernel rpm generation.
+- above step creats RPMS into /root/rpmbuild/RPMS/x86_64 so cd into that directory as root and run following command 
+```bash
 - #rpm -iUv *.rpm (to update the new kernel) 
-- #reboot 
+- #reboot
+```
 - after reboot login to the new kernel and run  "#uname -r " you should see latest kernel version isntalled in centos 
 
 
 after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
 
 ## 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
-
+```bash
 - cd /usr/src/kernels
 - cp *.patch /root/rpmbuild/BUILD/ 
 - cd /root/rpmbuild/BUILD/kernel-5.2.2 
@@ -56,7 +59,7 @@ after this steps you have the base kernel required to patch for adding support f
 - #uname -r you will see 5.3.2 kernel version 
 - cat /sys/kernel/security/tpm0/binary_bios_measurements > temp 
 - hexdump -C temp | more , will show you tpm2.0 eventlogs 
-
+```
 ## 5. Steps to run Utility 
 
 - download the supplied Utility folder into some place of your choice and copy temp into it 
