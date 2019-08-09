@@ -75,8 +75,8 @@ $ hexdump -C temp | more , will show you tpm2.0 eventlogs
 
 - download the supplied Utility folder into some place of your choice and copy temp into it 
 ```bash 
-- gcc -o tool tool.c -std=c99
-- ./tool temp
+$ gcc -o tool tool.c -std=c99
+$ ./tool temp
 ```
 - this will show all events in new TCG eventlog format 
 - if you want to have hexdump a utiliy is provided just run it with your binary blob
