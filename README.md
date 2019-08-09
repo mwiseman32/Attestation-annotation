@@ -4,9 +4,9 @@
 1. [Introduction](#1-introduction)
 2. [Why repo?](#2-why-repo)
 3. [Steps for centOS-7  kernel upgrade](#3-Steps for centOS-7 kernel upgrade)
-4. [Patch the kernel to add support for TCG TPM2.0 eventlog](#4-Patch the kernel to add support for TCG TPM2.0 eventlog)
+4. [Add support for TCG TPM2.0 eventlog](#4-Add support for TCG TPM2.0 eventlog)
 5. [Steps to run Utility](#5-Steps to run Utility )
-6. [Steps to change EFI setting for allowing hash Algorithm support(optional)](#6-Steps to change EFI setting for allowing hash Algorithm support(optional))
+6. [Steps to change EFI setting(optional)](#6-Steps to change EFI setting(optional))
 7. [FAQ](#7-faq)
 
 
