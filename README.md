@@ -16,7 +16,7 @@
 - tool.c is the main program which parses the tpm2.- TCG eventlog and generates different outputs based on parameters provided
 - tool.sh is a script to run the tests on selected binary dump data for bios_runtime measurements and it generates the report in results.txt file at the end. 
 
-## 3. Steps for CentOS-7 kernel upgrade
+## 3. Steps to upgrade CentOS-7 kernel to TOT linux
 - Centos7 latest installed on baremetal system with TPM2.0 (this device will be working as our provisioner/ client) 
 - as centos latest kernel-3.10 doesnot have required eventlogs we need to upgrade the kernel to latest linux tree. at the time of writing this latest stable linux is 5.2.2. 
 - install all dependancies for kernel upgrade
