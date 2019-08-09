@@ -41,8 +41,8 @@ $ sudo make rpm-pkg
 - wait for 2-3 hours based on your processor speed and memory for new kernel rpm generation.
 - above step creats RPMS into /root/rpmbuild/RPMS/x86_64 so cd into that directory as root and run following command 
 ```bash
-# rpm -iUv *.rpm (to update the new kernel) 
-# reboot
+$ sudo rpm -iUv *.rpm (to update the new kernel) 
+$ sudo reboot
 ```
 - after reboot login to the new kernel and run  
 ```bash 
