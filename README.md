@@ -1,25 +1,23 @@
 # Attestation-annotation
-A collection of references to attestation projects, instructions, application notes, and glue code, hints, requests for new projects, etc.
+
 ## Contents
 1. [Introduction](#1-introduction)
 2. [Why repo?](#2-why-repo)
-3. [Utility Scope](#3-Utility Scope)
-4. [Steps for centOS-7  kernel upgrade](#4-Steps for centOS-7 kernel upgrade)
-5. [Platforms supported by build.git](#5-platforms-supported-by-buildgit)
-6. [Manifests](#6-manifests)
-7. [Get and build the solution](#7-get-and-build-the-solution)
+3. [Steps for centOS-7  kernel upgrade](#3-Steps for centOS-7 kernel upgrade)
+4. [Patch the kernel to add support for TCG TPM2.0 eventlog](# 4. Patch the kernel to add support for TCG TPM2.0 eventlog)
+5. [Steps to run Utility](# 5. Steps to run Utility )
+6. [Steps to change EFI setting for allowing hash Algorithm support(optional)](6. Steps to change EFI setting for allowing hash Algorithm support(optional))
 8. [FAQ](#8-faq)
 
 
 # 1. Introduction
+  A collection of references to attestation projects, instructions, application notes, and glue code, hints, requests for new projects, etc.
 # 2. Why repo?
-
-# 3.Utility Scope
 - tool.c is the main program which parses the tpm2.- TCG eventlog and generates different outputs based on parameters provided
 - tool.sh is a script to run the tests on selected binary dump data for bios_runtime measurements and it generates the report in results.txt file at the end. 
 
 
-# 4. Steps for centOS-7  kernel upgrade
+# 3. Steps for CentOS-7 kernel upgrade
 
 
 - Centos7 latest installed on baremetal system with TPM2.0 (this device will be working as our provisioner/ client) 
@@ -42,8 +40,8 @@ $ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-
 
 after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
 
-# Steps to Patch the kernel
-============================
+# 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
+
 - cd /usr/src/kernels
 - cp *.patch /root/rpmbuild/BUILD/ 
 - cd /root/rpmbuild/BUILD/kernel-5.2.2 
@@ -56,8 +54,8 @@ after this steps you have the base kernel required to patch for adding support f
 - cat /sys/kernel/security/tpm0/binary_bios_measurements > temp 
 - hexdump -C temp | more , will show you tpm2.0 eventlogs 
 
--> Steps for Utility 
-====================
+# 5. Steps to run Utility 
+
 - download the supplied Utility folder into some place of your choice and copy temp into it 
 - gcc -o tool tool.c -std=c99
 - ./tool temp , this will show all events in new TCG eventlog format 
@@ -68,8 +66,8 @@ after this steps you have the base kernel required to patch for adding support f
 - ./tool.sh , will run all the tests and puts the results of each run in results folder 
 - it will also open the report.txt on terminal 
 
-- additional steps to change EFI setting for allowing hash Algorithm support 
-========================================================================================
+# 6. Steps to change EFI setting for allowing hash Algorithm support(optional)
+
 - Hash algorithms are bit mapped as following 
   Bit 0: SHA-1
   Bit 1: SHA-256 
@@ -80,3 +78,4 @@ so to set it in bios EFI run following command
 - while reboot kernel will ask you to confirm Hash algorithm change press F12 for intel bios 
 - if you have selected SHA-1 and SHA-256 then you should see two PCR banks when you run 
 - tpm2_pcrlist (this step requires tpm2-tss, tpm2-abrmd and tpm2-tools installed) if you don't have it yet run the utility against new blob and you should see events having selected Hashing algorithms
+# 8.faq
