@@ -30,7 +30,10 @@ $ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-
 - change the .config to running config on your centos by running "$sudo cp -v /boot/config-* .config" 
 - make menuconfig (make changes in the kernel --this step is required for ima patches) 
 - save the new .config file 
-- run "$sudo df -h " to make sure you have atleast 30GB in your root partition 
+- ```bash
+  $ sudo df -h 
+  ```
+- to make sure you have atleast 30GB in your root partition 
 - $sudo make rpm-pkg  (wait for 2-3 hours based on your processor speed and memory for new kernel rpm generation) 
 - above step creats RPMS into /root/rpmbuild/RPMS/x86_64 so cd into that directory as root 
 - #rpm -iUv *.rpm (to update the new kernel) 
