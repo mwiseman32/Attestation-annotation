@@ -60,7 +60,7 @@ $ cd /location/of/0011-MGP1.patch and 0011-MGP2.patch
 $ cp *.patch /root/rpmbuild/SOURCES/ 
 $ cd /root/rpmbuild/BUILD/kernel-5.2.2 
 ```
-- replace scripts/package/mkspec with the supplied
+- replace scripts/package/mkspec with the supplied mkspec
 ```bash
 $ cd /usr/src/kernel/kernel-5.2.2/
 $ sudo make -j$(nproc) rpm-pkg 
