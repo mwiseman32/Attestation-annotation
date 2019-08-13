@@ -21,7 +21,7 @@
 - as centos latest kernel-3.10 doesnot have required eventlogs we need to upgrade the kernel to latest linux tree. at the time of writing this latest stable linux is 5.2.2. 
 - install all dependancies for kernel upgrade
 ```bash
-$ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-devel rpm-build 
+$ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-devel rpm-build flex bison 
 ```
 - download latest linux kernel from https://www.kernel.org tarball and extract (tar xvf ) it. 
 ```bash 
@@ -37,7 +37,7 @@ $ make menuconfig
 - run following command to make sure you have atleast 30GB in your root partition
 ```bash
 $ sudo df -h 
-$ sudo make rpm-pkg
+$ sudo make -j$(nproc) rpm-pkg
 ```
 - wait for 2-3 hours based on your processor speed and memory for new kernel rpm generation.
 - above step creats RPMS into /root/rpmbuild/RPMS/x86_64 so cd into that directory as root and run following command 
@@ -63,7 +63,7 @@ $ cd /root/rpmbuild/BUILD/kernel-5.2.2
 - replace scripts/package/mkspec with the supplied
 ```bash
 $ cd /usr/src/kernel/kernel-5.2.2/
-$ sudo make rpm-pkg 
+$ sudo make -j$(nproc) rpm-pkg 
 ```
 - and wait for 2-3 hours 
 ```bash 
