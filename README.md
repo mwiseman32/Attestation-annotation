@@ -29,7 +29,7 @@ $ cd  linux-5.2.2
 ```
 - change the .config to running config on your centos by running  
 ```bash 
-$ sudo cp -v /boot/config-* .config
+$ sudo cp -v /boot/config-3.10.0-957.27.2.el7.x86_64 .config
 $ make menuconfig 
 ```
 - make changes in the kernel --this step is required for ima patches
@@ -68,7 +68,7 @@ $ sudo make rpm-pkg
 - and wait for 2-3 hours 
 ```bash 
 $ cd /root/rpmbuild/RPMS/x86_64
-$ rpm -iUv *.rpm 
+$ sudo yum install *.rpm
 ```
 - this will install patched kernel
 ```bash
