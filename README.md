@@ -84,7 +84,8 @@ $ uname -r
 ```bash  
 $ cat /sys/kernel/security/tpm0/binary_bios_measurements > temp 
 $ hexdump -C temp | more 
-- will show you tpm2.0 eventlogs ```
+```
+- will show you tpm2.0 eventlogs 
 ## 6. Steps to run Utility 
 
 - download the supplied Utility folder into some place of your choice and copy temp into it 
