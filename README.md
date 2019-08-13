@@ -65,12 +65,17 @@ $ cd /root/rpmbuild/BUILD/kernel-5.2.2
 $ cd /usr/src/kernel/kernel-5.2.2/
 $ sudo make -j$(nproc) rpm-pkg 
 ```
-- and wait for 2-3 hours 
+- this step will take more 1 to 3 hours depending on your processor and cores. after sucessfully finishing, it should have written new kernel rpms in /root/rpmbuild/RPMS/x86_64. go to that directory and install the new kernel rpms
 ```bash 
 $ cd /root/rpmbuild/RPMS/x86_64
 $ sudo yum install *.rpm
 ```
-- this will install patched kernel
+- above step will install patched kernel and you can reboot and verify the new kernel version
+-optional if you have different version name/number and you want to create a boot menu entry run following command to add new created kernel as boot menu item.
+```bash 
+$ grub2-mkconfig -o /boot/grub2/grub.cfg
+````
+at this point you can reboot the system.
 ```bash
 $ sudo reboot 
 ```
