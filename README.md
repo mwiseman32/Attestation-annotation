@@ -57,7 +57,7 @@ $ uname -r
 - copy the supplied two patches 0011-MGp1.patch and 0011-MGP2.patch rpmbuild/BUILD directory as follow 
 ```bash
 $ cd /location/of/0011-MGP1.patch and 0011-MGP2.patch
-$ cp *.patch /root/rpmbuild/BUILD/ 
+$ cp *.patch /root/rpmbuild/SOURCES/ 
 $ cd /root/rpmbuild/BUILD/kernel-5.2.2 
 ```
 - replace scripts/package/mkspec with the supplied
