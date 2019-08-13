@@ -27,8 +27,9 @@ $ yum install makecache gcc make ncurses-devel bc openssl-devel elfutils-libelf-
 ```bash 
 $ cd  linux-5.2.2
 ```
-- change the .config to running config on your centos by running "$sudo cp -v /boot/config-* .config" 
+- change the .config to running config on your centos by running  
 ```bash 
+$ sudo cp -v /boot/config-* .config
 $ make menuconfig 
 ```
 - make changes in the kernel --this step is required for ima patches
