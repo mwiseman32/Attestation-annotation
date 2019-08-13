@@ -65,7 +65,7 @@ $ cd /root/rpmbuild/BUILD/kernel-5.2.2
 $ cd /usr/src/kernel/kernel-5.2.2/
 $ sudo make -j$(nproc) rpm-pkg 
 ```
-- this step will take more 1 to 3 hours depending on your processor and cores. after sucessfully finishing, it should have written new kernel rpms in /root/rpmbuild/RPMS/x86_64. go to that directory and install the new kernel rpms
+- this step can take from 1 to 3 hours depending on your processor and cores. after sucessfully finishing, it should have written new kernel rpms in /root/rpmbuild/RPMS/x86_64. go to that directory and install the new kernel rpms
 ```bash 
 $ cd /root/rpmbuild/RPMS/x86_64
 $ sudo yum install *.rpm
