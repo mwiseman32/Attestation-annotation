@@ -54,13 +54,15 @@ $ uname -r
 - after this steps you have the base kernel required to patch for adding support for TCG specified TPM2.0 eventlog
 
 ## 4. Patch the kernel to add support for TCG TPM2.0 eventlog 
+- copy the supplied two patches 0011-MGp1.patch and 0011-MGP2.patch rpmbuild/BUILD directory as follow 
 ```bash
-$ cd /usr/src/kernels
+$ cd /location/of/0011-MGP1.patch and 0011-MGP2.patch
 $ cp *.patch /root/rpmbuild/BUILD/ 
 $ cd /root/rpmbuild/BUILD/kernel-5.2.2 
 ```
 - replace scripts/package/mkspec with the supplied
 ```bash
+$ cd /usr/src/kernel/kernel-5.2.2/
 $ sudo make rpm-pkg 
 ```
 - and wait for 2-3 hours 
