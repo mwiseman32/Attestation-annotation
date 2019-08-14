@@ -25,6 +25,10 @@ IMA Attestation with TLV patches
   list. It needs a copy of the signing public key (default ima_pub.pem)
   and the expected pcr-10 value (from the TPM_QUOTE). This should be
   tweaked and integrated into the attestation server.
+- to run the code use following command 
+  cat tm | ./tlv_dump
+  where tm is the binary blob of ima tlv measurement. 
+
 
 Notes:
 
