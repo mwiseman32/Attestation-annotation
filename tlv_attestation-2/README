@@ -1,0 +1,52 @@
+IMA Attestation with TLV patches
+
+1. Integration
+
+- apply patches to kernel in numeric order, rebuild, and install.
+
+- modify the grub config to add an ima policy option to the kernel
+  command line. There are two options:
+    ima_tcb   (try this one first - it measures executables only,
+               and should run and verify without problems.)
+    ima_policy=tcb (This one also measures any files read by root.
+                    this will measure a lot more files, and may
+                    cause "violations" with things like log files, 
+		    unless a tailored policy is created and loaded.)
+
+- use ima_sign.sh to sign generate the keys and sign the files
+  (This depends on evmctl utility and probably needs to be
+   tweaked, as it assumes it is run on the root fs.)
+
+- get_list.sh is a daemon script for copying the measurement list
+  from the kernel to a log file (where the attestation client can
+  use it.) This clears the list from the kernel memory automatically.
+
+- tlv_dump is example code for parsing and validating a measurement
+  list. It needs a copy of the signing public key (default ima_pub.pem)
+  and the expected pcr-10 value (from the TPM_QUOTE). This should be
+  tweaked and integrated into the attestation server.
+
+Notes:
+
+- reading the list and pcr-10, and getting the quote are not atomic.
+  The right way to attest and verify is thus to get the pcr-10 value
+  and quote first, and then get the measurement list.
+  This guarantees that the target pcr-10 value should be somewhere in
+  the list, which may have additional trailing entries, which came in
+  after the pcr-10 value was obtained. If you do it in the other order,
+  the pcr-10 value may include extensions not yet recorded in the 
+  measurement list, and the verification will fail. The 'p' option
+  in tlv_dump.c takes the expected pcr-10 value (from the quote) and
+  will find it if it occurs somewhere in the list, even if there are
+  trailing entries.
+
+- the supplied patches do not limit or deduplicate violation entries
+  in the measurement list (it turns out this will be hard/impossible to
+  do.) You should not see any violations with the "ima_tcb" policy, which
+  is why I suggest trying it first. With "ima_policy=tcb", you may see
+  violations with ill-behaved applications - I haven't had a chance to 
+  test this on and i-TAG image. The tlv_dump.c verification code does
+  handle violation entries correctly, and this will not prevent verification.
+  The violation records are mainly an issue if there are so many of them
+  that the list grows too large.
+
