@@ -29,7 +29,7 @@ $ cd  linux-5.2.2
 ```
 - change the .config to running config on your centos by running  
 ```bash 
-$ sudo cp -v /boot/config-3.10.0-957.27.2.el7.x86_64 .config
+$ sudo cp -v /boot/config-`uname -r` .config
 $ make menuconfig 
 ```
 - make changes in the kernel --this step is required for ima patches
