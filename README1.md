@@ -41,7 +41,7 @@ Or
 ```bash
 $ cd ~/rpmbuild/SPECS
 ``` 
-- replace the file with provided kernel.spec and put all the patches (total 13) into ~/rpmbuild/SOURCE/ directory 
+- replace the file with provided kernel.spec and put all the patches (total 13) into ~/rpmbuild/SOURCES/ directory 
 - change the .config file to have have IMA_LIST_TLV=y and TEMPLATE not set as shown below.
 ```bash
 # CONFIG_IMA_LIST_TEMPLATE is not set
@@ -49,6 +49,6 @@ CONFIG_IMA_LIST_TLV=y
 ```
 - build the new kernel
 ```bash
-$ cd ~/rpmbuild/SPEC/ 
+$ cd ~/rpmbuild/SPECS/ 
 $ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
 ```
