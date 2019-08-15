@@ -1,0 +1,210 @@
+--- a/security/integrity/ima/ima.h	2019-06-18 21:35:41.551803539 -0400
++++ b/security/integrity/ima/ima.h	2019-06-18 22:55:49.812436944 -0400
+@@ -43,12 +43,6 @@ enum tpm_pcrs { TPM_PCR0 = 0, TPM_PCR8 =
+ #define IMA_HASH_BITS 9
+ #define IMA_MEASURE_HTABLE_SIZE (1 << IMA_HASH_BITS)
+ 
+-#define IMA_TEMPLATE_FIELD_ID_MAX_LEN	16
+-#define IMA_TEMPLATE_NUM_FIELDS_MAX	15
+-
+-#define IMA_TEMPLATE_IMA_NAME "ima"
+-#define IMA_TEMPLATE_IMA_FMT "d|n"
+-
+ /* current content of the policy */
+ extern int ima_policy_flag;
+ 
+@@ -67,43 +61,7 @@ struct ima_event_data {
+ 	const char *violation;
+ };
+ 
+-/* IMA template field data definition */
+-struct ima_field_data {
+-	u8 *data;
+-	u32 len;
+-};
+-
+-/* IMA template field definition */
+-struct ima_template_field {
+-	const char field_id[IMA_TEMPLATE_FIELD_ID_MAX_LEN];
+-	int (*field_init)(struct ima_event_data *event_data,
+-			  struct ima_field_data *field_data);
+-	void (*field_show)(struct seq_file *m, enum ima_show_type show,
+-			   struct ima_field_data *field_data);
+-};
+ 
+-/* IMA template descriptor definition */
+-struct ima_template_desc {
+-	struct list_head list;
+-	char *name;
+-	char *fmt;
+-	int num_fields;
+-	const struct ima_template_field **fields;
+-};
+-
+-struct ima_template_entry {
+-	int pcr;
+-	u8 digest[TPM_DIGEST_SIZE];	/* sha1 or md5 measurement hash */
+-	struct ima_template_desc *template_desc; /* template descriptor */
+-	u32 template_data_len;
+-	struct ima_field_data template_data[0];	/* template related data */
+-};
+-
+-struct ima_queue_entry {
+-	struct hlist_node hnext;	/* place in hash collision list */
+-	struct list_head later;		/* place in ima_measurements list */
+-	struct ima_template_entry *entry;
+-};
+ extern struct list_head ima_measurements;	/* list of all measurements */
+ 
+ /* Some details preceding the binary serialized measurement list */
+@@ -135,17 +93,11 @@ int ima_fs_init(void);
+ int ima_fs_record_init(void);
+ int ima_hash_setup(char *str);
+ int ima_need_xattr(void);
+-int ima_add_template_entry(struct ima_template_entry *entry, int violation,
+-			   const char *op, struct inode *inode,
+-			   const unsigned char *filename);
+ struct crypto_shash *ima_alloc_tfm(enum hash_algo algo);
+ void ima_free_tfm(struct crypto_shash *tfm);
+ int ima_calc_file_hash(struct file *file, struct ima_digest_data *hash);
+ int ima_calc_buffer_hash(const void *buf, loff_t len,
+ 			 struct ima_digest_data *hash);
+-int ima_calc_field_array_hash(struct ima_field_data *field_data,
+-			      struct ima_template_desc *desc, int num_fields,
+-			      struct ima_digest_data *hash);
+ int __init ima_calc_boot_aggregate(struct ima_digest_data *hash);
+ void ima_add_violation(struct file *file, const unsigned char *filename,
+ 		       struct integrity_iint_cache *iint,
+@@ -153,16 +105,12 @@ void ima_add_violation(struct file *file
+ int ima_init_crypto(void);
+ void ima_putc(struct seq_file *m, void *data, int datalen);
+ void ima_print_digest(struct seq_file *m, u8 *digest, u32 size);
+-struct ima_template_desc *ima_template_desc_current(void);
+-int ima_restore_measurement_entry(struct ima_template_entry *entry);
+ int ima_restore_measurement_list(loff_t bufsize, void *buf);
+ int ima_measurements_show(struct seq_file *m, void *v);
+ void *ima_measurements_start(struct seq_file *m, loff_t *pos);
+ void *ima_measurements_next(struct seq_file *m, void *v, loff_t *pos);
+ void ima_measurements_stop(struct seq_file *m, void *v);
+ unsigned long ima_get_binary_runtime_size(void);
+-int ima_init_template(void);
+-void ima_init_template_list(void);
+ extern struct dentry *ima_dir;
+ extern struct dentry *binary_runtime_measurements;
+ extern struct dentry *ascii_runtime_measurements;
+@@ -208,6 +156,7 @@ enum ima_hooks {
+ 	__ima_hooks(__ima_hook_enumify)
+ };
+ 
++#include "ima_template.h"
+ /* LIM API function definitions */
+ int ima_get_action(struct inode *inode, const struct cred *cred, u32 secid,
+ 		   int mask, enum ima_hooks func, int *pcr);
+@@ -221,12 +170,6 @@ void ima_store_measurement(struct integr
+ 			   int xattr_len, int pcr);
+ void ima_audit_measurement(struct integrity_iint_cache *iint,
+ 			   const unsigned char *filename);
+-int ima_alloc_init_template(struct ima_event_data *event_data,
+-			    struct ima_template_entry **entry);
+-int ima_store_template(struct ima_template_entry *entry, int violation,
+-		       struct inode *inode,
+-		       const unsigned char *filename, int pcr);
+-void ima_free_template_entry(struct ima_template_entry *entry);
+ const char *ima_d_path(const struct path *path, char **pathbuf, char *filename);
+ 
+ /* IMA policy related functions */
+diff --git a/security/integrity/ima/ima_template.h b/security/integrity/ima/ima_template.h
+new file mode 100644
+index 000000000000..0d3c859aff1e
+--- /dev/null	1969-12-31 19:00:00.000000000 -0500
++++ b/security/integrity/ima/ima_template.h	2019-06-18 23:17:21.142299243 -0400
+@@ -0,0 +1,89 @@
++/*
++ * Copyright (C) 2005,2006,2007,2008 IBM Corporation
++ *
++ * Authors:
++ * Reiner Sailer <sailer@watson.ibm.com>
++ * Mimi Zohar <zohar@us.ibm.com>
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License as
++ * published by the Free Software Foundation, version 2 of the
++ * License.
++ *
++ * File: ima_template.h
++ *	internal Integrity Measurement Architecture (IMA) definitions
++ */
++
++#ifndef __LINUX_IMA_TEMPLATE_H
++#define __LINUX_IMA_TEMPLATE_H
++
++#define IMA_TEMPLATE_FIELD_ID_MAX_LEN	16
++#define IMA_TEMPLATE_NUM_FIELDS_MAX	15
++
++#define IMA_TEMPLATE_IMA_NAME "ima"
++#define IMA_TEMPLATE_IMA_FMT "d|n"
++
++/* IMA template field data definition */
++struct ima_field_data {
++	u8 *data;
++	u32 len;
++};
++
++/* IMA template field definition */
++struct ima_template_field {
++	const char field_id[IMA_TEMPLATE_FIELD_ID_MAX_LEN];
++	int (*field_init)(struct ima_event_data *event_data,
++			  struct ima_field_data *field_data);
++	void (*field_show)(struct seq_file *m, enum ima_show_type show,
++			   struct ima_field_data *field_data);
++};
++
++/* IMA template descriptor definition */
++struct ima_template_desc {
++	struct list_head list;
++	char *name;
++	char *fmt;
++	int num_fields;
++	const struct ima_template_field **fields;
++};
++
++struct ima_template_entry {
++	int pcr;
++	u8 digest[TPM_DIGEST_SIZE];	/* sha1 or md5 measurement hash */
++	struct ima_template_desc *template_desc; /* template descriptor */
++	u32 template_data_len;
++	struct ima_field_data template_data[0];	/* template related data */
++};
++
++struct ima_queue_entry {
++	struct hlist_node hnext;	/* place in hash collision list */
++	struct list_head later;		/* place in ima_measurements list */
++	struct ima_template_entry *entry;
++};
++extern struct list_head ima_measurements;	/* list of all measurements */
++
++int ima_add_template_entry(struct ima_template_entry *entry, int violation,
++			   const char *op, struct inode *inode,
++			   const unsigned char *filename);
++
++int ima_calc_field_array_hash(struct ima_field_data *field_data,
++			      struct ima_template_desc *desc, int num_fields,
++			      struct ima_digest_data *hash);
++
++struct ima_template_desc *ima_template_desc_current(void);
++int ima_restore_measurement_entry(struct ima_template_entry *entry);
++int ima_need_xattr(void);
++int ima_init_template(void);
++void ima_init_template_list(void);
++int ima_alloc_init_template(struct ima_event_data *event_data,
++struct ima_template_entry **entry);
++
++
++int ima_store_template(struct ima_template_entry *entry, int violation,
++		       struct inode *inode,
++		       const unsigned char *filename, int pcr);
++void ima_free_template_entry(struct ima_template_entry *entry);
++
++
++#endif /* __LINUX_IMA_TEMPLATE_H */
++

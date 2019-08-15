@@ -1,0 +1,216 @@
+diff --git a/security/integrity/ima/ima_api.c b/security/integrity/ima/ima_api.c
+index c7505fb..2d3ff76 100644
+--- a/security/integrity/ima/ima_api.c
++++ b/security/integrity/ima/ima_api.c
+@@ -21,104 +21,6 @@
+ 
+ #include "ima.h"
+ 
+-/*
+- * ima_free_template_entry - free an existing template entry
+- */
+-void ima_free_template_entry(struct ima_template_entry *entry)
+-{
+-	int i;
+-
+-	for (i = 0; i < entry->template_desc->num_fields; i++)
+-		kfree(entry->template_data[i].data);
+-
+-	kfree(entry);
+-}
+-
+-/*
+- * ima_alloc_init_template - create and initialize a new template entry
+- */
+-int ima_alloc_init_template(struct ima_event_data *event_data,
+-			    struct ima_template_entry **entry)
+-{
+-	struct ima_template_desc *template_desc = ima_template_desc_current();
+-	int i, result = 0;
+-
+-	*entry = kzalloc(sizeof(**entry) + template_desc->num_fields *
+-			 sizeof(struct ima_field_data), GFP_NOFS);
+-	if (!*entry)
+-		return -ENOMEM;
+-
+-	(*entry)->template_desc = template_desc;
+-	for (i = 0; i < template_desc->num_fields; i++) {
+-		const struct ima_template_field *field =
+-			template_desc->fields[i];
+-		u32 len;
+-
+-		result = field->field_init(event_data,
+-					   &((*entry)->template_data[i]));
+-		if (result != 0)
+-			goto out;
+-
+-		len = (*entry)->template_data[i].len;
+-		(*entry)->template_data_len += sizeof(len);
+-		(*entry)->template_data_len += len;
+-	}
+-	return 0;
+-out:
+-	ima_free_template_entry(*entry);
+-	*entry = NULL;
+-	return result;
+-}
+-
+-/*
+- * ima_store_template - store ima template measurements
+- *
+- * Calculate the hash of a template entry, add the template entry
+- * to an ordered list of measurement entries maintained inside the kernel,
+- * and also update the aggregate integrity value (maintained inside the
+- * configured TPM PCR) over the hashes of the current list of measurement
+- * entries.
+- *
+- * Applications retrieve the current kernel-held measurement list through
+- * the securityfs entries in /sys/kernel/security/ima. The signed aggregate
+- * TPM PCR (called quote) can be retrieved using a TPM user space library
+- * and is used to validate the measurement list.
+- *
+- * Returns 0 on success, error code otherwise
+- */
+-int ima_store_template(struct ima_template_entry *entry,
+-		       int violation, struct inode *inode,
+-		       const unsigned char *filename, int pcr)
+-{
+-	static const char op[] = "add_template_measure";
+-	static const char audit_cause[] = "hashing_error";
+-	char *template_name = entry->template_desc->name;
+-	int result;
+-	struct {
+-		struct ima_digest_data hdr;
+-		char digest[TPM_DIGEST_SIZE];
+-	} hash;
+-
+-	if (!violation) {
+-		int num_fields = entry->template_desc->num_fields;
+-
+-		/* this function uses default algo */
+-		hash.hdr.algo = HASH_ALGO_SHA1;
+-		result = ima_calc_field_array_hash(&entry->template_data[0],
+-						   entry->template_desc,
+-						   num_fields, &hash.hdr);
+-		if (result < 0) {
+-			integrity_audit_msg(AUDIT_INTEGRITY_PCR, inode,
+-					    template_name, op,
+-					    audit_cause, result, 0);
+-			return result;
+-		}
+-		memcpy(entry->digest, hash.hdr.digest, hash.hdr.length);
+-	}
+-	entry->pcr = pcr;
+-	result = ima_add_template_entry(entry, violation, op, inode, filename);
+-	return result;
+-}
+ 
+ /*
+  * ima_add_violation - add violation to measurement list.
+diff --git a/security/integrity/ima/ima_template.c b/security/integrity/ima/ima_template.c
+index b631b8b..fab9483 100644
+--- a/security/integrity/ima/ima_template.c
++++ b/security/integrity/ima/ima_template.c
+@@ -434,3 +434,102 @@ int ima_restore_measurement_list(loff_t size, void *buf)
+ 	}
+ 	return ret;
+ }
++/*
++ * ima_free_template_entry - free an existing template entry
++ */
++void ima_free_template_entry(struct ima_template_entry *entry)
++{
++	int i;
++
++	for (i = 0; i < entry->template_desc->num_fields; i++)
++		kfree(entry->template_data[i].data);
++
++	kfree(entry);
++}
++
++/*
++ * ima_alloc_init_template - create and initialize a new template entry
++ */
++int ima_alloc_init_template(struct ima_event_data *event_data,
++			    struct ima_template_entry **entry)
++{
++	struct ima_template_desc *template_desc = ima_template_desc_current();
++	int i, result = 0;
++
++	*entry = kzalloc(sizeof(**entry) + template_desc->num_fields *
++			 sizeof(struct ima_field_data), GFP_NOFS);
++	if (!*entry)
++		return -ENOMEM;
++
++	(*entry)->template_desc = template_desc;
++	for (i = 0; i < template_desc->num_fields; i++) {
++		const struct ima_template_field *field =
++			template_desc->fields[i];
++		u32 len;
++
++		result = field->field_init(event_data,
++					   &((*entry)->template_data[i]));
++		if (result != 0)
++			goto out;
++
++		len = (*entry)->template_data[i].len;
++		(*entry)->template_data_len += sizeof(len);
++		(*entry)->template_data_len += len;
++	}
++	return 0;
++out:
++	ima_free_template_entry(*entry);
++	*entry = NULL;
++	return result;
++}
++
++/*
++ * ima_store_template - store ima template measurements
++ *
++ * Calculate the hash of a template entry, add the template entry
++ * to an ordered list of measurement entries maintained inside the kernel,
++ * and also update the aggregate integrity value (maintained inside the
++ * configured TPM PCR) over the hashes of the current list of measurement
++ * entries.
++ *
++ * Applications retrieve the current kernel-held measurement list through
++ * the securityfs entries in /sys/kernel/security/ima. The signed aggregate
++ * TPM PCR (called quote) can be retrieved using a TPM user space library
++ * and is used to validate the measurement list.
++ *
++ * Returns 0 on success, error code otherwise
++ */
++int ima_store_template(struct ima_template_entry *entry,
++		       int violation, struct inode *inode,
++		       const unsigned char *filename, int pcr)
++{
++	static const char op[] = "add_template_measure";
++	static const char audit_cause[] = "hashing_error";
++	char *template_name = entry->template_desc->name;
++	int result;
++	struct {
++		struct ima_digest_data hdr;
++		char digest[TPM_DIGEST_SIZE];
++	} hash;
++
++	if (!violation) {
++		int num_fields = entry->template_desc->num_fields;
++
++		/* this function uses default algo */
++		hash.hdr.algo = HASH_ALGO_SHA1;
++		result = ima_calc_field_array_hash(&entry->template_data[0],
++						   entry->template_desc,
++						   num_fields, &hash.hdr);
++		if (result < 0) {
++			integrity_audit_msg(AUDIT_INTEGRITY_PCR, inode,
++					    template_name, op,
++					    audit_cause, result, 0);
++			return result;
++		}
++		memcpy(entry->digest, hash.hdr.digest, hash.hdr.length);
++	}
++	entry->pcr = pcr;
++	result = ima_add_template_entry(entry, violation, op, inode, filename);
++	return result;
++}
++

@@ -1,0 +1,148 @@
+--- a/security/integrity/ima/ima.h	2019-06-18 21:34:13.533925494 -0400
++++ b/security/integrity/ima/ima.h	2019-06-18 21:35:41.551803539 -0400
+@@ -133,6 +133,8 @@ extern bool ima_canonical_fmt;
+ int ima_init(void);
+ int ima_fs_init(void);
+ int ima_fs_record_init(void);
++int ima_hash_setup(char *str);
++int ima_need_xattr(void);
+ int ima_add_template_entry(struct ima_template_entry *entry, int violation,
+ 			   const char *op, struct inode *inode,
+ 			   const unsigned char *filename);
+@@ -166,6 +168,8 @@ extern struct dentry *binary_runtime_mea
+ extern struct dentry *ascii_runtime_measurements;
+ extern const struct file_operations ima_measurements_ops;
+ extern const struct file_operations ima_ascii_measurements_ops;
++extern int ima_hash_algo;
++extern int ima_hash_setup_done;
+ int __init ima_init_digests(void);
+ 
+ /*
+--- a/security/integrity/ima/ima_main.c	2019-06-18 20:49:14.494695713 -0400
++++ b/security/integrity/ima/ima_main.c	2019-06-18 21:41:23.899452658 -0400
+@@ -41,36 +41,9 @@ int ima_appraise;
+ #endif
+ 
+ int ima_hash_algo = HASH_ALGO_SHA1;
+-static int hash_setup_done;
++int ima_hash_setup_done;
+ 
+-static int __init hash_setup(char *str)
+-{
+-	struct ima_template_desc *template_desc = ima_template_desc_current();
+-	int i;
+-
+-	if (hash_setup_done)
+-		return 1;
+-
+-	if (strcmp(template_desc->name, IMA_TEMPLATE_IMA_NAME) == 0) {
+-		if (strncmp(str, "sha1", 4) == 0)
+-			ima_hash_algo = HASH_ALGO_SHA1;
+-		else if (strncmp(str, "md5", 3) == 0)
+-			ima_hash_algo = HASH_ALGO_MD5;
+-		else
+-			return 1;
+-		goto out;
+-	}
+ 
+-	i = match_string(hash_algo_name, HASH_ALGO__LAST, str);
+-	if (i < 0)
+-		return 1;
+-
+-	ima_hash_algo = i;
+-out:
+-	hash_setup_done = 1;
+-	return 1;
+-}
+-__setup("ima_hash=", hash_setup);
+ 
+ /*
+  * ima_rdwr_violation_check
+@@ -174,7 +147,6 @@ static int process_measurement(struct fi
+ {
+ 	struct inode *inode = file_inode(file);
+ 	struct integrity_iint_cache *iint = NULL;
+-	struct ima_template_desc *template_desc;
+ 	char *pathbuf = NULL;
+ 	char filename[NAME_MAX];
+ 	const char *pathname = NULL;
+@@ -275,9 +247,8 @@ static int process_measurement(struct fi
+ 		goto out_locked;
+ 	}
+ 
+-	template_desc = ima_template_desc_current();
+-	if ((action & IMA_APPRAISE_SUBMASK) ||
+-		    strcmp(template_desc->name, IMA_TEMPLATE_IMA_NAME) != 0)
++
++	if ((action & IMA_APPRAISE_SUBMASK) || ima_need_xattr())
+ 		/* read 'security.ima' */
+ 		xattr_len = ima_read_xattr(file_dentry(file), &xattr_value);
+ 
+@@ -581,15 +552,15 @@ static int __init init_ima(void)
+ 	int error;
+ 
+ 	ima_init_template_list();
+-	hash_setup(CONFIG_IMA_DEFAULT_HASH);
++	ima_hash_setup(CONFIG_IMA_DEFAULT_HASH);
+ 	error = ima_init();
+ 
+ 	if (error && strcmp(hash_algo_name[ima_hash_algo],
+ 			    CONFIG_IMA_DEFAULT_HASH) != 0) {
+ 		pr_info("Allocating %s failed, going to use default hash algorithm %s\n",
+ 			hash_algo_name[ima_hash_algo], CONFIG_IMA_DEFAULT_HASH);
+-		hash_setup_done = 0;
+-		hash_setup(CONFIG_IMA_DEFAULT_HASH);
++		ima_hash_setup_done = 0;
++		ima_hash_setup(CONFIG_IMA_DEFAULT_HASH);
+ 		error = ima_init();
+ 	}
+ 
+
+--- a/security/integrity/ima/ima_template.c	2019-06-18 20:55:09.264375660 -0400
++++ b/security/integrity/ima/ima_template.c	2019-06-18 21:43:31.478841400 -0400
+@@ -52,6 +52,13 @@ static struct ima_template_desc *lookup_
+ static int template_desc_init_fields(const char *template_fmt,
+ 				     const struct ima_template_field ***fields,
+ 				     int *num_fields);
++int ima_need_xattr(void)
++{
++	struct ima_template_desc *template_desc;
++	template_desc = ima_template_desc_current();
++	return (strcmp(template_desc->name, IMA_TEMPLATE_IMA_NAME) != 0);
++}
++
+ 
+ static int __init ima_template_setup(char *str)
+ {
+@@ -601,3 +608,31 @@ int ima_calc_field_array_hash(struct ima
+ 
+ 	return rc;
+ }
++int __init ima_hash_setup(char *str)
++{
++	struct ima_template_desc *template_desc = ima_template_desc_current();
++	int i;
++
++	if (ima_hash_setup_done)
++		return 1;
++
++	if (strcmp(template_desc->name, IMA_TEMPLATE_IMA_NAME) == 0) {
++		if (strncmp(str, "sha1", 4) == 0)
++			ima_hash_algo = HASH_ALGO_SHA1;
++		else if (strncmp(str, "md5", 3) == 0)
++			ima_hash_algo = HASH_ALGO_MD5;
++		else
++			return 1;
++		goto out;
++	}
++
++	i = match_string(hash_algo_name, HASH_ALGO__LAST, str);
++	if (i < 0)
++		return 1;
++
++	ima_hash_algo = i;
++out:
++	ima_hash_setup_done = 1;
++	return 1;
++}
++__setup("ima_hash=", ima_hash_setup);

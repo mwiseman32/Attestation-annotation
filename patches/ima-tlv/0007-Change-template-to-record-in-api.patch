@@ -1,0 +1,364 @@
+--- a/security/integrity/ima/ima_api.c	2019-06-18 23:36:08.571244078 -0400
++++ b/security/integrity/ima/ima_api.c	2019-06-19 01:27:40.018697254 -0400
+@@ -10,7 +10,7 @@
+  *
+  * File: ima_api.c
+  *	Implements must_appraise_or_measure, collect_measurement,
+- *	appraise_measurement, store_measurement and store_template.
++ *	appraise_measurement, store_measurement and store_record.
+  */
+ #include <linux/slab.h>
+ #include <linux/file.h>
+@@ -33,7 +33,7 @@ void ima_add_violation(struct file *file
+ 		       struct integrity_iint_cache *iint,
+ 		       const char *op, const char *cause)
+ {
+-	struct ima_template_entry *entry;
++	struct ima_record_entry *entry;
+ 	struct inode *inode = file_inode(file);
+ 	struct ima_event_data event_data = {iint, file, filename, NULL, 0,
+ 					    cause};
+@@ -43,15 +43,15 @@ void ima_add_violation(struct file *file
+ 	/* can overflow, only indicator */
+ 	atomic_long_inc(&ima_htable.violations);
+ 
+-	result = ima_alloc_init_template(&event_data, &entry);
++	result = ima_alloc_init_record(&event_data, &entry);
+ 	if (result < 0) {
+ 		result = -ENOMEM;
+ 		goto err_out;
+ 	}
+-	result = ima_store_template(entry, violation, inode,
++	result = ima_store_record(entry, violation, inode,
+ 				    filename, CONFIG_IMA_MEASURE_PCR_IDX);
+ 	if (result < 0)
+-		ima_free_template_entry(entry);
++		ima_free_record_entry(entry);
+ err_out:
+ 	integrity_audit_msg(AUDIT_INTEGRITY_PCR, inode, filename,
+ 			    op, cause, result, 0);
+@@ -164,8 +164,8 @@ out:
+ /*
+  * ima_store_measurement - store file measurement
+  *
+- * Create an "ima" template and then store the template by calling
+- * ima_store_template.
++ * Create an "ima" record and then store the record by calling
++ * ima_store_record.
+  *
+  * We only get here if the inode has not already been measured,
+  * but the measurement could already exist:
+@@ -181,11 +181,11 @@ void ima_store_measurement(struct integr
+ 			   struct evm_ima_xattr_data *xattr_value,
+ 			   int xattr_len, int pcr)
+ {
+-	static const char op[] = "add_template_measure";
++	static const char op[] = "add_record_measure";
+ 	static const char audit_cause[] = "ENOMEM";
+ 	int result = -ENOMEM;
+ 	struct inode *inode = file_inode(file);
+-	struct ima_template_entry *entry;
++	struct ima_record_entry *entry;
+ 	struct ima_event_data event_data = {iint, file, filename, xattr_value,
+ 					    xattr_len, NULL};
+ 	int violation = 0;
+@@ -193,20 +193,20 @@ void ima_store_measurement(struct integr
+ 	if (iint->measured_pcrs & (0x1 << pcr))
+ 		return;
+ 
+-	result = ima_alloc_init_template(&event_data, &entry);
++	result = ima_alloc_init_record(&event_data, &entry);
+ 	if (result < 0) {
+ 		integrity_audit_msg(AUDIT_INTEGRITY_PCR, inode, filename,
+ 				    op, audit_cause, result, 0);
+ 		return;
+ 	}
+ 
+-	result = ima_store_template(entry, violation, inode, filename, pcr);
++	result = ima_store_record(entry, violation, inode, filename, pcr);
+ 	if ((!result || result == -EEXIST) && !(file->f_flags & O_DIRECT)) {
+ 		iint->flags |= IMA_MEASURED;
+ 		iint->measured_pcrs |= (0x1 << pcr);
+ 	}
+ 	if (result < 0)
+-		ima_free_template_entry(entry);
++		ima_free_record_entry(entry);
+ }
+ 
+ void ima_audit_measurement(struct integrity_iint_cache *iint,
+--- a/security/integrity/ima/ima_fs_template.c	2019-06-18 23:36:08.571244078 -0400
++++ b/security/integrity/ima/ima_fs_template.c	2019-06-19 01:21:46.132403100 -0400
+@@ -85,7 +85,7 @@ int ima_measurements_show(struct seq_fil
+ {
+ 	/* the list never shrinks, so we don't need a lock here */
+ 	struct ima_queue_entry *qe = v;
+-	struct ima_template_entry *e;
++	struct ima_record_entry *e;
+ 	char *template_name;
+ 	u32 pcr, namelen, template_data_len; /* temporary fields */
+ 	bool is_ima_template = false;
+@@ -156,7 +156,7 @@ int ima_ascii_measurements_show(struct s
+ {
+ 	/* the list never shrinks, so we don't need a lock here */
+ 	struct ima_queue_entry *qe = v;
+-	struct ima_template_entry *e;
++	struct ima_record_entry *e;
+ 	char *template_name;
+ 	int i;
+ 
+--- a/security/integrity/ima/ima_init.c	2019-06-18 23:36:08.570244092 -0400
++++ b/security/integrity/ima/ima_init.c	2019-06-19 01:19:11.112371238 -0400
+@@ -47,7 +47,7 @@ static int __init ima_add_boot_aggregate
+ {
+ 	static const char op[] = "add_boot_aggregate";
+ 	const char *audit_cause = "ENOMEM";
+-	struct ima_template_entry *entry;
++	struct ima_record_entry *entry;
+ 	struct integrity_iint_cache tmp_iint, *iint = &tmp_iint;
+ 	struct ima_event_data event_data = {iint, NULL, boot_aggregate_name,
+ 					    NULL, 0, NULL};
+@@ -72,17 +72,17 @@ static int __init ima_add_boot_aggregate
+ 		}
+ 	}
+ 
+-	result = ima_alloc_init_template(&event_data, &entry);
++	result = ima_alloc_init_record(&event_data, &entry);
+ 	if (result < 0) {
+ 		audit_cause = "alloc_entry";
+ 		goto err_out;
+ 	}
+ 
+-	result = ima_store_template(entry, violation, NULL,
++	result = ima_store_record(entry, violation, NULL,
+ 				    boot_aggregate_name,
+ 				    CONFIG_IMA_MEASURE_PCR_IDX);
+ 	if (result < 0) {
+-		ima_free_template_entry(entry);
++		ima_free_record_entry(entry);
+ 		audit_cause = "store_entry";
+ 		goto err_out;
+ 	}
+@@ -119,7 +119,7 @@ int __init ima_init(void)
+ 	rc = ima_init_crypto();
+ 	if (rc)
+ 		return rc;
+-	rc = ima_init_template();
++	rc = ima_init_record();
+ 	if (rc != 0)
+ 		return rc;
+ 
+--- a/security/integrity/ima/ima_main.c	2019-06-19 16:48:45.035984205 -0400
++++ b/security/integrity/ima/ima_main.c	2019-06-19 16:51:19.695963595 -0400
+@@ -551,7 +551,7 @@ static int __init init_ima(void)
+ {
+ 	int error;
+ 
+-	ima_init_template_list();
++	ima_init_record_list();
+ 	ima_hash_setup(CONFIG_IMA_DEFAULT_HASH);
+ 	error = ima_init();
+ 
+--- a/security/integrity/ima/ima_queue_template.c	2019-06-18 23:49:23.862370986 -0400
++++ b/security/integrity/ima/ima_queue_template.c	2019-06-19 01:15:01.951534590 -0400
+@@ -76,7 +76,7 @@ static struct ima_queue_entry *ima_looku
+  * binary_runtime_measurement list entry, which contains a
+  * couple of variable length fields (e.g template name and data).
+  */
+-static int get_binary_runtime_size(struct ima_template_entry *entry)
++static int get_binary_runtime_size(struct ima_record_entry *entry)
+ {
+ 	int size = 0;
+ 
+@@ -95,7 +95,7 @@ static int get_binary_runtime_size(struc
+  *
+  * (Called with ima_extend_list_mutex held.)
+  */
+-static int ima_add_digest_entry(struct ima_template_entry *entry,
++static int ima_add_digest_entry(struct ima_record_entry *entry,
+ 				bool update_htable)
+ {
+ 	struct ima_queue_entry *qe;
+@@ -150,7 +150,7 @@ unsigned long ima_get_binary_runtime_siz
+  * kexec, maintain the total memory size required for serializing the
+  * binary_runtime_measurements.
+  */
+-int ima_add_template_entry(struct ima_template_entry *entry, int violation,
++int ima_add_template_entry(struct ima_record_entry *entry, int violation,
+ 			   const char *op, struct inode *inode,
+ 			   const unsigned char *filename)
+ {
+@@ -194,7 +194,7 @@ out:
+ 	return result;
+ }
+ 
+-int ima_restore_measurement_entry(struct ima_template_entry *entry)
++int ima_restore_measurement_entry(struct ima_record_entry *entry)
+ {
+ 	int result = 0;
+ 
+--- a/security/integrity/ima/ima_template.c	2019-06-18 23:36:08.571244078 -0400
++++ b/security/integrity/ima/ima_template.c	2019-06-19 01:12:30.178448686 -0400
+@@ -68,7 +68,7 @@ static int __init ima_template_setup(cha
+ 	if (ima_template)
+ 		return 1;
+ 
+-	ima_init_template_list();
++	ima_init_record_list();
+ 
+ 	/*
+ 	 * Verify that a template with the supplied name exists.
+@@ -212,7 +212,7 @@ static int template_desc_init_fields(con
+ 	return 0;
+ }
+ 
+-void ima_init_template_list(void)
++void ima_init_record_list(void)
+ {
+ 	int i;
+ 
+@@ -230,14 +230,14 @@ void ima_init_template_list(void)
+ struct ima_template_desc *ima_template_desc_current(void)
+ {
+ 	if (!ima_template) {
+-		ima_init_template_list();
++		ima_init_record_list();
+ 		ima_template =
+ 		    lookup_template_desc(CONFIG_IMA_DEFAULT_TEMPLATE);
+ 	}
+ 	return ima_template;
+ }
+ 
+-int __init ima_init_template(void)
++int __init ima_init_record(void)
+ {
+ 	struct ima_template_desc *template = ima_template_desc_current();
+ 	int result;
+@@ -284,7 +284,7 @@ out:
+ static int ima_restore_template_data(struct ima_template_desc *template_desc,
+ 				     void *template_data,
+ 				     int template_data_size,
+-				     struct ima_template_entry **entry)
++				     struct ima_record_entry **entry)
+ {
+ 	int ret = 0;
+ 	int i;
+@@ -321,7 +321,7 @@ static int ima_restore_template_data(str
+ 	}
+ 
+ 	if (ret < 0) {
+-		ima_free_template_entry(*entry);
++		ima_free_record_entry(*entry);
+ 		*entry = NULL;
+ 	}
+ 
+@@ -341,7 +341,7 @@ int ima_restore_measurement_list(loff_t
+ 
+ 	void *bufp = buf + sizeof(*khdr);
+ 	void *bufendp;
+-	struct ima_template_entry *entry;
++	struct ima_record_entry *entry;
+ 	struct ima_template_desc *template_desc;
+ 	DECLARE_BITMAP(hdr_mask, HDR__LAST);
+ 	unsigned long count = 0;
+@@ -443,9 +443,9 @@ int ima_restore_measurement_list(loff_t
+ 	return ret;
+ }
+ /*
+- * ima_free_template_entry - free an existing template entry
++ * ima_free_record_entry - free an existing template entry
+  */
+-void ima_free_template_entry(struct ima_template_entry *entry)
++void ima_free_record_entry(struct ima_record_entry *entry)
+ {
+ 	int i;
+ 
+@@ -456,10 +456,10 @@ void ima_free_template_entry(struct ima_
+ }
+ 
+ /*
+- * ima_alloc_init_template - create and initialize a new template entry
++ * ima_alloc_init_record - create and initialize a new template entry
+  */
+-int ima_alloc_init_template(struct ima_event_data *event_data,
+-			    struct ima_template_entry **entry)
++int ima_alloc_init_record(struct ima_event_data *event_data,
++			    struct ima_record_entry **entry)
+ {
+ 	struct ima_template_desc *template_desc = ima_template_desc_current();
+ 	int i, result = 0;
+@@ -486,13 +486,13 @@ int ima_alloc_init_template(struct ima_e
+ 	}
+ 	return 0;
+ out:
+-	ima_free_template_entry(*entry);
++	ima_free_record_entry(*entry);
+ 	*entry = NULL;
+ 	return result;
+ }
+ 
+ /*
+- * ima_store_template - store ima template measurements
++ * ima_store_record - store ima template measurements
+  *
+  * Calculate the hash of a template entry, add the template entry
+  * to an ordered list of measurement entries maintained inside the kernel,
+@@ -507,7 +507,7 @@ out:
+  *
+  * Returns 0 on success, error code otherwise
+  */
+-int ima_store_template(struct ima_template_entry *entry,
++int ima_store_record(struct ima_record_entry *entry,
+ 		       int violation, struct inode *inode,
+ 		       const unsigned char *filename, int pcr)
+ {
+--- a/security/integrity/ima/ima_template.h	2019-06-18 23:36:08.570244092 -0400
++++ b/security/integrity/ima/ima_template.h	2019-06-19 01:05:22.980779112 -0400
+@@ -47,7 +47,7 @@ struct ima_template_desc {
+ 	const struct ima_template_field **fields;
+ };
+ 
+-struct ima_template_entry {
++struct ima_record_entry {
+ 	int pcr;
+ 	u8 digest[TPM_DIGEST_SIZE];	/* sha1 or md5 measurement hash */
+ 	struct ima_template_desc *template_desc; /* template descriptor */
+@@ -58,11 +58,11 @@ struct ima_template_entry {
+ struct ima_queue_entry {
+ 	struct hlist_node hnext;	/* place in hash collision list */
+ 	struct list_head later;		/* place in ima_measurements list */
+-	struct ima_template_entry *entry;
++	struct ima_record_entry *entry;
+ };
+ extern struct list_head ima_measurements;	/* list of all measurements */
+ 
+-int ima_add_template_entry(struct ima_template_entry *entry, int violation,
++int ima_add_template_entry(struct ima_record_entry *entry, int violation,
+ 			   const char *op, struct inode *inode,
+ 			   const unsigned char *filename);
+ 
+@@ -71,18 +71,18 @@ int ima_calc_field_array_hash(struct ima
+ 			      struct ima_digest_data *hash);
+ 
+ struct ima_template_desc *ima_template_desc_current(void);
+-int ima_restore_measurement_entry(struct ima_template_entry *entry);
++int ima_restore_measurement_entry(struct ima_record_entry *entry);
+ int ima_need_xattr(void);
+-int ima_init_template(void);
+-void ima_init_template_list(void);
+-int ima_alloc_init_template(struct ima_event_data *event_data,
+-struct ima_template_entry **entry);
++int ima_init_record(void);
++void ima_init_record_list(void);
++int ima_alloc_init_record(struct ima_event_data *event_data,
++struct ima_record_entry **entry);
+ 
+ 
+-int ima_store_template(struct ima_template_entry *entry, int violation,
++int ima_store_record(struct ima_record_entry *entry, int violation,
+ 		       struct inode *inode,
+ 		       const unsigned char *filename, int pcr);
+-void ima_free_template_entry(struct ima_template_entry *entry);
++void ima_free_record_entry(struct ima_record_entry *entry);
+ 
+ 
+ #endif /* __LINUX_IMA_TEMPLATE_H */

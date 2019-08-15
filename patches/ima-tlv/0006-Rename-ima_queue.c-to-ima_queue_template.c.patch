@@ -1,0 +1,125 @@
+--- a/security/integrity/ima/Makefile	2019-06-18 22:18:14.378655664 -0400
++++ b/security/integrity/ima/Makefile	2019-06-18 23:37:54.642783446 -0400
+@@ -6,8 +6,9 @@
+ 
+ obj-$(CONFIG_IMA) += ima.o
+ 
+-ima-y := ima_fs.o ima_queue.o ima_init.o ima_main.o ima_crypto.o ima_api.o \
+-	 ima_policy.o ima_template.o ima_template_lib.o ima_fs_template.o
++ima-y := ima_fs.o ima_init.o ima_main.o ima_crypto.o ima_api.o \
++	 ima_policy.o ima_queue_template.o ima_template.o ima_template_lib.o \
++	 ima_fs_template.o
+ ima-$(CONFIG_IMA_APPRAISE) += ima_appraise.o
+ ima-$(CONFIG_HAVE_IMA_KEXEC) += ima_kexec.o
+ obj-$(CONFIG_IMA_BLACKLIST_KEYRING) += ima_mok.o
+--- a/security/integrity/ima/ima.h	2019-06-18 22:55:49.812436944 -0400
++++ b/security/integrity/ima/ima.h	2019-06-18 23:39:04.634819637 -0400
+@@ -111,6 +111,7 @@ void *ima_measurements_start(struct seq_
+ void *ima_measurements_next(struct seq_file *m, void *v, loff_t *pos);
+ void ima_measurements_stop(struct seq_file *m, void *v);
+ unsigned long ima_get_binary_runtime_size(void);
++int ima_pcr_extend(const u8 *hash, int pcr);
+ extern struct dentry *ima_dir;
+ extern struct dentry *binary_runtime_measurements;
+ extern struct dentry *ascii_runtime_measurements;
+diff --git a/security/integrity/ima/ima_queue.c b/security/integrity/ima/ima_queue_template.c
+similarity index 95%
+rename from security/integrity/ima/ima_queue.c
+rename to security/integrity/ima/ima_queue_template.c
+index b186819bd5aa..0bb84f0bf7e3 100644
+--- a/security/integrity/ima/ima_queue.c	2019-06-18 21:28:30.958327547 -0400
++++ b/security/integrity/ima/ima_queue_template.c	2019-06-18 23:49:23.862370986 -0400
+@@ -140,22 +140,6 @@ unsigned long ima_get_binary_runtime_siz
+ 		return binary_runtime_size + sizeof(struct ima_kexec_hdr);
+ };
+ 
+-static int ima_pcr_extend(const u8 *hash, int pcr)
+-{
+-	int result = 0;
+-	int i;
+-
+-	if (!ima_tpm_chip)
+-		return result;
+-
+-	for (i = 0; i < ima_tpm_chip->nr_allocated_banks; i++)
+-		memcpy(digests[i].digest, hash, TPM_DIGEST_SIZE);
+-
+-	result = tpm_pcr_extend(ima_tpm_chip, pcr, digests);
+-	if (result != 0)
+-		pr_err("Error Communicating to TPM chip, result: %d\n", result);
+-	return result;
+-}
+ 
+ /*
+  * Add template entry to the measurement list and hash table, and
+--- a/security/integrity/ima/ima_crypto.c	2019-06-18 22:18:14.379655642 -0400
++++ b/security/integrity/ima/ima_crypto.c	2019-06-19 09:27:09.173055043 -0400
+@@ -35,7 +35,24 @@ MODULE_PARM_DESC(ahash_minsize, "Minimum
+ /* default is 0 - 1 page. */
+ static int ima_maxorder;
+ static unsigned int ima_bufsize = PAGE_SIZE;
++/* pre-allocated array of tpm_digest structures to extend a PCR */
++static struct tpm_digest *digests; 
++int ima_pcr_extend(const u8 *hash, int pcr)
++{
++	int result = 0;
++	int i;
++ 
++	if (!ima_tpm_chip)
++		return result;
++
++	for (i = 0; i < ima_tpm_chip->nr_allocated_banks; i++)
++		memcpy(digests[i].digest, hash, TPM_DIGEST_SIZE);
+ 
++	result = tpm_pcr_extend(ima_tpm_chip, pcr, digests);
++	if (result != 0)
++		pr_err("Error Communicating to TPM chip, result: %d\n", result);
++	return result;
++}
+ static int param_set_bufsize(const char *val, const struct kernel_param *kp)
+ {
+ 	unsigned long long size;
+@@ -630,3 +647,20 @@ int __init ima_calc_boot_aggregate(struc
+ 
+ 	return rc;
+ }
++int __init ima_init_digests(void)
++{
++	int i;
++
++	if (!ima_tpm_chip)
++		return 0;
++
++	digests = kcalloc(ima_tpm_chip->nr_allocated_banks, sizeof(*digests),
++			  GFP_NOFS);
++	if (!digests)
++		return -ENOMEM;
++
++	for (i = 0; i < ima_tpm_chip->nr_allocated_banks; i++)
++		digests[i].alg_id = ima_tpm_chip->allocated_banks[i].alg_id;
++
++	return 0;
++}
+--- a/security/integrity/ima/ima_queue_template.c	2019-06-20 16:10:00.097428652 -0400
++++ b/security/integrity/ima/ima_queue_template.c	2019-06-20 16:31:40.165211357 -0400
+@@ -203,20 +203,3 @@ int ima_restore_measurement_entry(struct
+ 	return result;
+ }
+ 
+-int __init ima_init_digests(void)
+-{
+-	int i;
+-
+-	if (!ima_tpm_chip)
+-		return 0;
+-
+-	digests = kcalloc(ima_tpm_chip->nr_allocated_banks, sizeof(*digests),
+-			  GFP_NOFS);
+-	if (!digests)
+-		return -ENOMEM;
+-
+-	for (i = 0; i < ima_tpm_chip->nr_allocated_banks; i++)
+-		digests[i].alg_id = ima_tpm_chip->allocated_banks[i].alg_id;
+-
+-	return 0;
+-}

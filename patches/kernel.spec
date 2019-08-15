@@ -655,7 +655,7 @@ Patch547: 0007-Change-template-to-record-in-api.patch
 Patch548: 0008-Add-tlv-support-code.patch
 
 # Mainlined, https://bugzilla.redhat.com/show_bug.cgi?id=1716289
-Patch549: 0009-EDGEOS-tweak-ima_tcb-policy.patch
+Patch549: 0009-tweak-ima_tcb-policy.patch
 
 # Mainlined, https://bugzilla.redhat.com/show_bug.cgi?id=1716289
 Patch550: 0010-MGP1.Patch
