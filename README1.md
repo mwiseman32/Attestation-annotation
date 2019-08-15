@@ -20,17 +20,18 @@ $ rpm -Uvh kernel-5.1.9-300.fc30.src.rpm
 ```
 - above command writes the RPM contents into ${HOME}/rpmbuild/SOURCES and ${HOME}/rpmbuild/SPECS
 ```bash
-$ cp /boot/config-your-config .config
-$ cp .config ~/rpmbuild/SOURCE/config-x86_64-generic
-$ cd ~/rpmbuild/SPEC/ 
+$ cp /boot/.config-`uname -r` ~/rpmbuild/SOURCES/config-x86_64-generic
+$ cd ~/rpmbuild/SPECS/ 
 $ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
 ```
 - Wait for rpmbuild to build the kernel and it will create RPMS and SRPM in ~/rpmbuild/RPMS/x86_64/
 ```bash
 $ cd  ~/rpmbuild/RPMS/x86_64/
-# yum install kernel-*.rpm
-Or 
-# rpm -ivh kernel-*.rpm
+# yum install kernel-core-5.1.9-300.fc30.x86_64.rpm
+# yum install kernel-modules-5.1.9-300.fc30.x86_64.rpm
+# yum install kernel-modules-extras-5.1.9-300.fc30.x86_64.rpm
+# yum install kernel-5.1.9-300.fc30.x86_64.rpm
+# yum install kernel-devel-5.1.9-300.fc30.x86_64.rpm
 ```
 - Build Part 2: 
 ```bash
