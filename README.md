@@ -48,8 +48,9 @@ $ cd  ~/rpmbuild/RPMS/x86_64/
 ```bash
 $ cd ~/rpmbuild/SPECS
 ``` 
-- replace the file with provided kernel.spec and put all the patches (total 13) into ~/rpmbuild/SOURCES/ directory 
-- change the .config file to have have IMA_LIST_TLV=y and TEMPLATE not set as shown below.
+- replace the file with kernel.spec from the patches folder.
+- put all patches (from patches/eventlog and patches/ima-tlv -- total of 13) into ~/rpmbuild/SOURCES/ directory 
+- change each .config in ~/rpmbuild/SOURCES/ directory the following (manual operation for now, patch file to do this will be provided later):
 ```bash
 # CONFIG_IMA_LIST_TEMPLATE is not set
 CONFIG_IMA_LIST_TLV=y
