@@ -4,7 +4,7 @@
 - ima TLV support is not supported in mainline linux,  so we provide additional patches for that.
 - patches details :
 - Eventlog folder contains four patches for tcg tpm2.0 eventlog support and kernel.spec file for building eventlogs standalone.
--Ima-tlv folder contains nine patches for ima-tlv support and kernel.spec file for building ima-tlv standalone.
+- Ima-tlv folder contains nine patches for ima-tlv support and kernel.spec file for building ima-tlv standalone.
 - if you want to patch the kernel for both eventlog and ima-tlv support then use the kernel.spec file from Attestation-annotation folder and put all the patches (total thirteen= four(eventlog) + nine(ima-tlv)) into ~/rpmbuild/SOURCES/. 
 - apply provided patches to kernel in numeric order, rebuild, and install the new kernel. 
 - eventlog.c is a example code for parsing and validating TCG-2.0 evenlogs binary bios measurements.
