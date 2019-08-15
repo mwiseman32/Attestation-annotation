@@ -1,7 +1,7 @@
 # Patch Fedora30(5.1.9-300) for TCG2.0 Eventlog
 ## 1. Integration
 - since default fedora mainline kernel does not have support for eTCG2.0 eventlogs, we need to patch the kernel to bring TCG TPM2.0 eventlog to the user space. 
-- ima TlV support is not supported in mainline linux,  so we provide additional patches for that.
+- ima TLV support is not supported in mainline linux,  so we provide additional patches for that.
 - patches details :
 - Eventlog folder contains four patches for tcg tpm2.0 eventlog support and kernel.spec file for building eventlogs standalone.
 -Ima-tlv folder contains nine patches for ima-tlv support and kernel.spec file for building ima-tlv standalone.
