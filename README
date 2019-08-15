@@ -1,37 +1,21 @@
-Firmware Event Log with patches
 
-
-1. Integration
-==============
-apply patches to kernel in numeric order, rebuild, and install.
-
-
-eventlog.c is a example code for parsing and validating TCG-2.0 evenlog
+## 1. Integration
+- apply patches to kernel in numeric order, rebuild, and install.
+- eventlog.c is a example code for parsing and validating TCG-2.0 evenlog
   binary bios measurements.
-
-
-
-
-2. Steps
-========
-create a folder and copy eventlog.c into it. 
-
-
-cat /sys/kernel/security/tpm0/binary_bios_measurements > temp.txt 
-
-
-  you should get TCG-2 eventlog in temp.txt binary blob.
- gcc -o eventlog eventlog.c 
-./eventlog temp.txt > eventlog.txt
-  you should get parsed eventlogs in eventlog.txt
-
-
-
-
-3. Steps for kernel Build fedora 30
-=========================
+## 2. Steps
+- create a folder and copy eventlog.c into it. 
+```bash
+$ cat /sys/kernel/security/tpm0/binary_bios_measurements > temp.txt 
+```
+- you should get TCG-2 eventlog in temp.txt binary blob.
+```bash
+$ gcc -o eventlog eventlog.c 
+$ ./eventlog temp.txt > eventlog.txt
+```
+- you should get parsed eventlogs in eventlog.txt
+## 3. Steps for kernel Build fedora 30
 - Build Part 1: 
-
 -Get the 5.1.9.fc30 from https://koji.fedoraproject.org/koji/buildinfo?buildID=1285871 
 Or by follow the instruction from link: https://fedoraproject.org/wiki/Building_a_custom_kernel/Source_RPM 
 ```bash 
