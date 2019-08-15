@@ -1,4 +1,4 @@
-# Patch Fedora30(5.1.9-300
+# Patch Fedora30(5.1.9-300) for TCG2.0 Eventlog
 ## 1. Integration
 - apply patches to kernel in numeric order, rebuild, and install.
 - eventlog.c is a example code for parsing and validating TCG-2.0 evenlog
