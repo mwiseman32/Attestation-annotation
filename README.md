@@ -60,7 +60,7 @@ CONFIG_IMA_LIST_TLV=y
 $ cd ~/rpmbuild/SPECS/ 
 $ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
 ```
-## 4. Steps
+## 4. Steps to run eventlog utility and script 
 - you should get TCG-2 eventlog in temp.txt binary blob. 
 ```bash
 $ cat /sys/kernel/security/tpm0/binary_bios_measurements > temp.txt 
@@ -71,3 +71,98 @@ $ gcc -o eventlog eventlog.c
 $ ./eventlog temp.txt > eventlog.txt
 ```
 - you should get parsed eventlogs in eventlog.txt
+- tools.sh is a script provids demo of the eventlog utility features, it takes sample eventlogs from testfiles folder and generates a test run in results folders along with reports.txt for summary of the run results.
+## 5. Steps to setup hirs provisioner 
+- before you begin this step please check that you have setisfied first three requirements from https://github.com/nsacyber/HIRS/wiki/installation_notes subtopic "Before You Begin".  
+- To perform TPM 2.0 provisioning (Centos 7 latest version)
+- install below listed dependencies: 
+```bash
+$ sudo yum install epel-release
+$ sudo yum install log4cplus protobuf re2 libcurl procps-ng glib2-devel 
+$ sudo yum install openssl-devel
+$ sudo yum install dnf
+$ sudo dnf builddep tpm2-tools
+$ sudo dnf -y update && sudo dnf -y install automake libtool \
+autoconf autoconf-archive libstdc++-devel gcc pkg-config \
+uriparser-devel libgcrypt-devel dbus-devel glib2-devel \
+compat-openssl10-devel libcurl-devel PyYAML
+```
+- provided HIRS_Provisioner_TPM_2_0-1.0.4-1558547257.cedc93.fc30.x86_64.rpm fedora 30 works with older tcg tpm2.0 intel stack so the older dependencies are also provided in dependancies folder. install all of them along with HIRS_Provisioner and tpm2_module as shown below.
+```bash
+$ sudo yum install tpm2-abrmd-1.1.0-12.fc28.x86_64.rpm
+$ sudo yum install tpm2-abrmd-devel-1.1.0-12.fc28.x86_64.rpm
+$ sudo yum install tpm2-tools-3.0.5-1.fc28.x86_64.rpm
+$ sudo yum install tpm2-tss-1.4.0-2.el7.x86_64.rpm
+$ sudo yum install tpm2-tss-devel-1.4.0-2.el7.x86_64.rpm
+$ sudo yum install paccor-*.rpm
+$ sudo yum install tpm_module*.rpm 
+$ sudo yum install HIRS_Provisioner_TPM_2_0*.rpm
+```
+- To configure the provisioner, edit the hirs-site.config file in /etc/hirs/hirs-site.config. Edit the file to specify the ACA's fully qualified domain name/ ip address and port 
+```bash
+#*******************************************
+#* HIRS site configuration properties file
+#*******************************************
+# Client configuration
+TPM_ENABLED=true
+IMA_ENABLED=true
+CLIENT_HOSTNAME=$HOSTNAME
+# Site-specific configuration
+ATTESTATION_CA_FQDN=192.168.1.1
+ATTESTATION_CA_PORT=8443
+BROKER_FQDN=192.168.1.1
+BROKER_PORT=61616
+PORTAL_FQDN=192.168.1.1
+PORTAL_PORT=8443
+```
+- save it and run following to setup SeLinux target policy
+```bash 
+$ dnf install selinux-policy-devel
+$ sudo semodule -i /opt/hirs/extras/aca/tomcat-mysql-hirs.pp
+```
+- Now, have a box vm client or any centos7 client system and install the ACA client 
+```bash 
+$ sudo yum install mariadb-server openssl tomcat java-1.8.0 rpmdevtools coreutils initscripts chkconfig sed grep firewalld policycoreutils
+$ sudo yum install HIRS_AttestationCA*.rpm
+```
+- In your browser, navigate to the ACA Portal URL: https://<ACAserveraddress>:8443/HIRS_AttestationCAPortal/
+- where <ACAserveraddress> is ip address of ACA client, for our example it 192.168.1.1
+
+- Usage:
+- For a device with a TPM 2.0, the command is the same:
+```bash 
+$ sudo hirs-provisioner -c 
+```
+- on the device with TPM , issue the following command in a terminal:
+```bash
+$ sudo tpm_aca_provision
+```
+- make sure you have tpm2-abrmd started 
+```bash
+$ sudo -u tss tpm2-abrmd & 
+```
+- when you run the device provisioner you should see something like following  
+```bash 
+$ sudo tpm_aca_provision
+--> Configuring provisioner
+----> Deleting existing key store
+----> Downloading truststore
+--> Provisioning
+----> Removing old attestation credentials, if any
+----> Provisioning TPM
+--> Provisioning
+----> Collecting endorsement credential from TPM
+----> Creating attestation key
+----> Collecting platform credential from TPM
+------> Unable to retrieve platform credential
+----> Collecting device information
+----> Sending identity claim to Attestation CA
+----> Received response. Attempting to decrypt nonce
+----> Nonce successfully decrypted. Sending attestation certificate request
+----> Storing attestation key certificate
+----> Provisioning successful
+```
+
+
+
+
