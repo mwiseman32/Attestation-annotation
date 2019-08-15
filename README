@@ -1,0 +1,70 @@
+Firmware Event Log with patches
+
+
+1. Integration
+==============
+apply patches to kernel in numeric order, rebuild, and install.
+
+
+eventlog.c is a example code for parsing and validating TCG-2.0 evenlog
+  binary bios measurements.
+
+
+
+
+2. Steps
+========
+create a folder and copy eventlog.c into it. 
+
+
+cat /sys/kernel/security/tpm0/binary_bios_measurements > temp.txt 
+
+
+  you should get TCG-2 eventlog in temp.txt binary blob.
+ gcc -o eventlog eventlog.c 
+./eventlog temp.txt > eventlog.txt
+  you should get parsed eventlogs in eventlog.txt
+
+
+
+
+3. Steps for kernel Build fedora 30
+=========================
+- Build Part 1: 
+
+-Get the 5.1.9.fc30 from https://koji.fedoraproject.org/koji/buildinfo?buildID=1285871 
+Or by follow the instruction from link: https://fedoraproject.org/wiki/Building_a_custom_kernel/Source_RPM 
+```bash 
+$ rpmdev-setuptree
+$ koji download-build --arch=src kernel-5.1.9-300.fc30
+$ rpm -Uvh kernel-5.1.9-300.fc30.src.rpm
+```
+- above command writes the RPM contents into ${HOME}/rpmbuild/SOURCES and ${HOME}/rpmbuild/SPECS
+```bash
+$ cp /boot/config-your-config .config
+$ cp .config ~/rpmbuild/SOURCE/config-x86_64-generic
+$ cd ~/rpmbuild/SPEC/ 
+$ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
+```
+- Wait for rpmbuild to build the kernel and it will create RPMS and SRPM in ~/rpmbuild/RPMS/x86_64/
+```bash
+$ cd  ~/rpmbuild/RPMS/x86_64/
+# yum install kernel-*.rpm
+Or 
+# rpm -ivh kernel-*.rpm
+```
+- Build Part 2: 
+```bash
+$ cd ~/rpmbuild/SPECS
+``` 
+- replace the file with provided kernel.spec and put all the patches (total 13) into ~/rpmbuild/SOURCE/ directory 
+- change the .config file to have have IMA_LIST_TLV=y and TEMPLATE not set as shown below.
+```bash
+# CONFIG_IMA_LIST_TEMPLATE is not set
+CONFIG_IMA_LIST_TLV=y
+```
+- build the new kernel
+```bash
+$ cd ~/rpmbuild/SPEC/ 
+$ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
+```
