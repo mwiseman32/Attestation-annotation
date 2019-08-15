@@ -1,5 +1,14 @@
 # Patch Fedora30(5.1.9-300) for TCG2.0 Eventlog
-## 1. Integration
+# Contents
+1. [Introduction](#1-introduction)
+2. [Why repo?](#2-why-repo)
+3. [Steps for centOS-7  kernel upgrade](#3-Steps for centOS-7 kernel upgrade)
+4. [Add support for TCG TPM2.0 eventlog](#4-Add support for TCG TPM2.0 eventlog)
+5. [Steps to run Utility](#5-Steps to run Utility )
+6. [Steps to change EFI setting(optional)](#6-Steps to change EFI setting(optional))
+7. [FAQ](#7-faq)
+
+## 1. Introduction
 - since default fedora mainline kernel does not have support for eTCG2.0 eventlogs, we need to patch the kernel to bring TCG TPM2.0 eventlog to the user space. 
 - ima TLV support is not supported in mainline linux,  so we provide additional patches for that.
 - patches details :
@@ -8,7 +17,9 @@
 - if you want to patch the kernel for both eventlog and ima-tlv support then use the kernel.spec file from Attestation-annotation folder and put all the patches (total thirteen= four(eventlog) + nine(ima-tlv)) into ~/rpmbuild/SOURCES/. 
 - apply provided patches to kernel in numeric order, rebuild, and install the new kernel. 
 - eventlog.c is a example code for parsing and validating TCG-2.0 evenlogs binary bios measurements.
-## 2. Steps for kernel Build fedora 30
+## 2. Why this repo?
+The patches we used for providing both the firmware event log and IMA TLV required 5.1.9 as they have both not been upstreamed.
+## 3. Steps for kernel Build fedora 30
 - Build Part 1: 
 
 -Get the 5.1.9.fc30 from https://koji.fedoraproject.org/koji/buildinfo?buildID=1285871 
@@ -48,7 +59,7 @@ CONFIG_IMA_LIST_TLV=y
 $ cd ~/rpmbuild/SPECS/ 
 $ rpmbuild -ba --without debug --without doc --without perf -without tools --without debuginfo --without kdump --without bootwrapper --without cross_headers kernel.spec
 ```
-## 3. Steps
+## 4. Steps
 - you should get TCG-2 eventlog in temp.txt binary blob. 
 ```bash
 $ cat /sys/kernel/security/tpm0/binary_bios_measurements > temp.txt 
