@@ -473,9 +473,10 @@ static void hash_tlv(uint8_t *hash, struct tlv *tlv)
 }
 
 static void display_tcg_base(struct tlv *tlv)
-{
+{       
 	if (tlv->t == IMA_TLV_SEQ)
-		printf("\nSEQNUM %08d ", *(uint32_t *)(tlv->v));
+		{printf("\n*****************IMA-EVENT (CEL-TLV)*************************");
+		printf("\nSEQNUM %08d ", *(uint32_t *)(tlv->v));}
 	else if (tlv->t == IMA_TLV_PCR)
 		printf("\nPCRNUM %02d ", *(uint8_t *)(tlv->v));
 	else if (tlv->t == IMA_TLV_DIGEST_SHA1) {

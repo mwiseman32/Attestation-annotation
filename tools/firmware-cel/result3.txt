@@ -1,0 +1,44 @@
+
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 77
+Number of hashAlg not match: 00 SHA256 | SHA1 |
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 82
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 26
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 82
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 26
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 82
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 26
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 82
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 26
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 82
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************
+**********TPM2.0-EVENT LOG STATS******************************
+Number of hashAlg matched  : 26
+Number of hashAlg not match: 00 SHA256 | SHA1 | SHA256 |
+**********TPM2.0-EVENT LOG STATS******************************

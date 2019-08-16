@@ -195,7 +195,7 @@ static void dumphex(const void* data, size_t size, FILE* out_file) {
 static void display_event12(struct event *event) {
     int i=0;
     printf("\n");
-    printf("\n*****************TPM-1.2-EVENT*********************************");
+    printf("\n*****************TPM-1.2-EVENT (CEL-TLV)*************************");
     printf("\nEvent seqNumber           : %08d", counter-1);
     printf("\nEvent PCRIndex            : %08x ", event->header1.pcr_idx);
     printf("\nEvent eventType           : %08x ", event->header1.event_type);
@@ -362,7 +362,7 @@ static int display_event20(struct event2 *event2, struct event *event) {
     int k=0;
     typedef enum { SHA1 = 0004,SHA256 = 0011, SHA384 = 0012 } Algorithm;
     Algorithm check;	
-    printf("\n*****************TPM2.0-EVENT*********************************");
+    printf("\n*****************TPM2.0-EVENT (CEL-TLV)*************************");
     printf("\nEvent seqNumber           : %08d", counter++);
     printf("\nEvent PCRIndex            : %08x ", event2->header2.pcr);
     printf("\nEvent eventType           : %08x ", event2->header2.type);
@@ -409,7 +409,7 @@ static int display_event20(struct event2 *event2, struct event *event) {
 }
 /* Function to determine size of hash digest and read it in event2 data structure */
 static void statcheck1(int hashVal) {	  
-    FILE *out_file= fopen("result3.txt", "a");
+    FILE *out_file= fopen("result.txt", "a");
     const char *Alg[]={"SHA1","SHA256", "SHA384"};
 	  
     switch(hashVal)
@@ -466,7 +466,7 @@ int main(int argc, char *argv[]) {
 	    display_event20(&event2,&event);
         }
 	
-        FILE *out_file= fopen("result3.txt", "a");
+        FILE *out_file= fopen("result.txt", "a");
         fprintf(out_file,"\n**********TPM2.0-EVENT LOG STATS******************************");
         if(event.efispecideventhead.num_algs==1) {
             int hashVal=event.efispecideventhead.digest_sizes[0].alg_id;

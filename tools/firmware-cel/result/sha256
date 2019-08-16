@@ -1,0 +1,756 @@
+
+
+*****************TPM-1.2-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000000
+Event PCRIndex            : 00000000 
+Event eventType           : 00000003 
+Event Digests             : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Event Len                 : 00000021 
+Event Signature           : 53706563204944204576656e74303300
+Event platform_class      : 00000000
+Event Spec Version Minor  : 00
+Event Spec Version Major  : 02
+Event spec_errata         : 00
+Event u_intnsize          : 02
+Event num_algs            : 00000001[1;33m CHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported is[0m[1;37m :01[0m
+Event alg_id              : 000b
+Event digest_size         : 0020
+Event Vendor Info         : 00
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000001
+Event PCRIndex            : 00000000 
+Event eventType           : 00000007 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 91 8B 27 A5 D6 E9 C0 EA B1 F1 57 26 0F 7A FC EE 5E BF 72 DA A8 5F 8B D0 EE 28 C1 41 DE 11 6F 7B 
+Event dataSize            : 0000001b 
+Event Data                : 42 6F 6F 74 20 47 75 61 72 64 20 4D 65 61 73 75 72 65 64 20 53 2D 43 52 54 4D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000002
+Event PCRIndex            : 00000000 
+Event eventType           : 00000008 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D4 72 0B 40 09 43 82 13 B8 03 56 80 17 F9 03 09 3F 6B EA 8A B4 7D 28 3D B3 2B 6E AB ED BB F1 55 
+Event dataSize            : 00000010 
+Event Data                : 1E FB 6B 54 0C 1D 55 40 A4 AD 4E F4 BF 17 B8 3A 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000003
+Event PCRIndex            : 00000000 
+Event eventType           : 00000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 0D 03 0E 93 79 7F E2 A6 1C 45 C8 CF 45 6E AD 2E 0C AD 88 46 A2 E7 F2 B0 8E 28 FF F1 94 06 FF 43 
+Event dataSize            : 00000010 
+Event Data                : 00 00 A2 FF 00 00 00 00 00 00 4E 00 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000004
+Event PCRIndex            : 00000007 
+Event eventType           : 80000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : CE 9C E3 86 B5 2E 09 9F 30 19 E5 12 A0 D6 06 2D 6B 56 0E FE 4F F3 E5 66 1C 75 25 E2 F9 C2 63 DF 
+Event dataSize            : 00000034 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 53 00 65 00 63 00 75 00 72 00 65 00 42 00 6F 00 6F 00 74 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000005
+Event PCRIndex            : 00000007 
+Event eventType           : 80000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DE A7 B8 0A B5 3A 3D AA A2 4D 5C C4 6C 64 E1 FA 9F FD 03 73 9F 90 AA DB D8 C0 86 7C 4A 5B 48 90 
+Event dataSize            : 00000024 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 50 00 4B 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000006
+Event PCRIndex            : 00000007 
+Event eventType           : 80000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : E6 70 E1 21 FC EB D4 73 B8 BC 41 BB 80 13 01 FC 1D 9A FA 33 90 4F 06 F7 14 9B 74 F1 2C 47 A6 8F 
+Event dataSize            : 00000026 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4B 00 45 00 4B 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000007
+Event PCRIndex            : 00000007 
+Event eventType           : 80000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : BA F8 9A 3C CA CE 52 75 0C 5F 01 28 35 1E 04 22 A4 15 97 A1 AD FD 50 82 2A A3 63 B9 D1 24 EA 7C 
+Event dataSize            : 00000024 
+Event Data                : CB B2 19 D7 3A 3D 96 45 A3 BC DA D0 0E 67 65 6F 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 00 62 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000008
+Event PCRIndex            : 00000007 
+Event eventType           : 80000001 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : A0 44 B4 CE 4A 4D CA 9A F3 12 C8 97 DC 56 EE 17 27 C3 85 EB 88 F7 CF B9 09 2B 82 65 02 9D 5B 1E 
+Event dataSize            : 00000eb2 
+Event Data                : CB B2 19 D7 3A 3D 96 45 A3 BC DA D0 0E 67 65 6F 03 00 00 00 00 00 00 00 8C 0E 00 00 00 00 00 00 64 00 62 00 78 00 26 16 C4 C1 4C 50 92 40 AC A9 41 F9 36 93 43 28 8C 0E 00 00 00 00 00 00 30 00 00 00 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 80 B4 D9 69 31 BF 0D 02 FD 91 A6 1E 19 D1 4F 1D A4 52 E6 6D B2 40 8C A8 60 4D 41 1F 92 65 9F 0A BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B F5 2F 83 A3 FA 9C FB D6 92 0F 72 28 24 DB E4 03 45 34 D2 5B 85 07 24 6B 3B 95 7D AC 6E 1B CE 7A BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C5 D9 D8 A1 86 E2 C8 2D 09 AF AA 2A 6F 7F 2E 73 87 0D 3E 64 F7 2C 4E 08 EF 67 79 6A 84 0F 0F BD BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 36 33 84 D1 4D 1F 2E 0B 78 15 62 64 84 C4 59 AD 57 A3 18 EF 43 96 26 60 48 D0 58 C5 A1 9B BF 76 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 1A EC 84 B8 4B 6C 65 A5 12 20 A9 BE 71 81 96 52 30 21 0D 62 D6 D3 3C 48 99 9C 6B 29 5A 2B 0A 06 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B E6 CA 68 E9 41 46 62 9A F0 3F 69 C2 F8 6E 6B EF 62 F9 30 B3 7C 6F BC C8 78 B7 8D F9 8C 03 34 E5 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C3 A9 9A 46 0D A4 64 A0 57 C3 58 6D 83 CE F5 F4 AE 08 B7 10 39 79 ED 89 32 74 2D F0 ED 53 0C 66 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 58 FB 94 1A EF 95 A2 59 43 B3 FB 5F 25 10 A0 DF 3F E4 4C 58 C9 5E 0A B8 04 87 29 75 68 AB 97 71 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 53 91 C3 A2 FB 11 21 02 A6 AA 1E DC 25 AE 77 E1 9F 5D 6F 09 CD 09 EE B2 50 99 22 BF CD 59 92 EA BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B D6 26 15 7E 1D 6A 71 8B C1 24 AB 8D A2 7C BB 65 07 2C A0 3A 7B 6B 25 7D BD CB BD 60 F6 5E F3 D1 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B D0 63 EC 28 F6 7E BA 53 F1 64 2D BF 7D FF 33 C6 A3 2A DD 86 9F 60 13 FE 16 2E 2C 32 F1 CB E5 6D BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 29 C6 EB 52 B4 3C 3A A1 8B 2C D8 ED 6E A8 60 7C EF 3C FA E1 BA FE 11 65 75 5C F2 E6 14 84 4A 44 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 90 FB E7 0E 69 D6 33 40 8D 3E 17 0C 68 32 DB B2 D2 09 E0 27 25 27 DF B6 3D 49 D2 95 72 A6 F4 4C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 07 5E EA 06 05 89 54 8B A0 60 B2 FE ED 10 DA 3C 20 C7 FE 9B 17 CD 02 6B 94 E8 A6 83 B8 11 52 38 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 07 E6 C6 A8 58 64 6F B1 EF C6 79 03 FE 28 B1 16 01 1F 23 67 FE 92 E6 BE 2B 36 99 9E FF 39 D0 9E BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 09 DF 5F 4E 51 12 08 EC 78 B9 6D 12 D0 81 25 FD B6 03 86 8D E3 9F 6F 72 92 78 52 59 9B 65 9C 26 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 0B BB 43 92 DA AC 7A B8 9B 30 A4 AC 65 75 31 B9 7B FA AB 04 F9 0B 0D AF E5 F9 B6 EB 90 A0 63 74 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 0C 18 93 39 76 2D F3 36 AB 3D D0 06 A4 63 DF 71 5A 39 CF B0 F4 92 46 5C 60 0E 6C 6B D7 BD 89 8C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 0D 0D BE CA 6F 29 EC A0 6F 33 1A 7D 72 E4 88 4B 12 09 7F B3 48 98 3A 2A 14 A0 D7 3F 4F 10 14 0F BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 0D C9 F3 FB 99 96 21 48 C3 CA 83 36 32 75 8D 3E D4 FC 8D 0B 00 07 B9 5B 31 E6 52 8F 2A CD 5B FC BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 10 6F AC EA CF EC FD 4E 30 3B 74 F4 80 A0 80 98 E2 D0 80 2B 93 6F 8E C7 74 CE 21 F3 16 86 68 9C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 17 4E 3A 0B 5B 43 C6 A6 07 BB D3 40 4F 05 34 1E 3D CF 39 62 67 CE 94 F8 B5 0E 2E 23 A9 DA 92 0C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 18 33 34 29 FF 05 62 ED 9F 97 03 3E 11 48 DC EE E5 2D BE 2E 49 6D 54 10 B5 CF D6 C8 64 D2 D1 0F BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 2B 99 CF 26 42 2E 92 FE 36 5F BF 4B C3 0D 27 08 6C 9E E1 4B 7A 6F FF 44 FB 2F 6B 90 01 69 99 39 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 2B BF 2C A7 B8 F1 D9 1F 27 EE 52 B6 FB 2A 5D D0 49 B8 5A 2B 9B 52 9C 5D 66 62 06 81 04 B0 55 F8 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 2C 73 D9 33 25 BA 6D CB E5 89 D4 A4 C6 3C 5B 93 55 59 EF 92 FB F0 50 ED 50 C4 E2 08 52 06 F1 7D BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 2E 70 91 67 86 A6 F7 73 51 1F A7 18 1F AB 0F 1D 70 B5 57 C6 32 2E A9 23 B2 A8 D3 B9 2B 51 AF 7D BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 30 66 28 FA 54 77 30 57 28 BA 4A 46 7D E7 D0 38 7A 54 F5 69 D3 76 9F CE 5E 75 EC 89 D2 8D 15 93 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 36 08 ED BA F5 AD 0F 41 A4 14 A1 77 7A BF 2F AF 5E 67 03 34 67 5E C3 99 5E 69 35 82 9E 0C AA D2 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 38 41 D2 21 36 8D 15 83 D7 5C 0A 02 E6 21 60 39 4D 6C 4E 0A 67 60 B6 F6 07 B9 03 62 BC 85 5B 02 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 3F CE 9B 9F DF 3E F0 9D 54 52 B0 F9 5E E4 81 C2 B7 F0 6D 74 3A 73 79 71 55 8E 70 13 6A CE 3E 73 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 43 97 DA CA 83 9E 7F 63 07 7C B5 0C 92 DF 43 BC 2D 2F B2 A8 F5 9F 26 FC 7A 0E 4B D4 D9 75 16 92 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 47 CC 08 61 27 E2 06 9A 86 E0 3A 6B EF 2C D4 10 F8 C5 5A 6D 6B DB 36 21 68 C3 1B 2C E3 2A 5A DF BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 51 88 31 FE 73 82 B5 14 D0 3E 15 C6 21 22 8B 8A B6 54 79 BD 0C BF A3 C5 C1 D0 F4 8D 9C 30 61 35 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 5A E9 49 EA 88 55 EB 93 E4 39 DB C6 5B DA 2E 42 85 2C 2F DF 67 89 FA 14 67 36 E3 C3 41 0F 2B 5C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 6B 1D 13 80 78 E4 41 8A A6 8D EB 7B B3 5E 06 60 92 CF 47 9E EB 8C E4 CD 12 E7 D0 72 CC B4 2F 66 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 6C 88 54 47 8D D5 59 E2 93 51 B8 26 C0 6C B8 BF EF 2B 94 AD 35 38 35 87 72 D1 93 F8 2E D1 CA 11 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 6F 14 28 FF 71 C9 DB 0E D5 AF 1F 2E 7B BF CB AB 64 7C C2 65 DD F5 B2 93 CD B6 26 F5 0A 3A 78 5E BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 71 F2 90 6F D2 22 49 7E 54 A3 46 62 AB 24 97 FC C8 10 20 77 0F F5 13 68 E9 E3 D9 BF CB FD 63 75 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 72 6B 3E B6 54 04 6A 30 F3 F8 3D 9B 96 CE 03 F6 70 E9 A8 06 D1 70 8A 03 71 E6 2D C4 9D 2C 23 C1 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 72 E0 BD 18 67 CF 5D 9D 56 AB 15 8A DF 3B DD BC 82 BF 32 A8 D8 AA 1D 8C 5E 2F 6D F2 94 28 D6 D8 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 78 27 AF 99 36 2C FA F0 71 7D AD E4 B1 BF E0 43 8A D1 71 C1 5A DD C2 48 B7 5B F8 CA A4 4B B2 C5 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 81 A8 B9 65 BB 84 D3 87 6B 94 29 A9 54 81 CC 95 53 18 CF AA 14 12 D8 08 C8 A3 3B FD 33 FF F0 E4 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 82 DB 3B CE B4 F6 08 43 CE 9D 97 C3 D1 87 CD 9B 59 41 CD 3D E8 10 0E 58 6F 2B DA 56 37 57 5F 67 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 89 5A 97 85 F6 17 CA 1D 7E D4 4F C1 A1 47 0B 71 F3 F1 22 38 62 D9 FF 9D CC 3A E2 DF 92 16 3D AF BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 8A D6 48 59 F1 95 B5 F5 8D AF AA 94 0B 6A 61 67 AC D6 7A 88 6E 8F 46 93 64 17 72 21 C5 59 45 B9 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 8B F4 34 B4 9E 00 CC F7 15 02 A2 CD 90 08 65 CB 01 EC 3B 3D A0 3C 35 BE 50 5F DF 7B D5 63 F5 21 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 8D 8E A2 89 CF E7 0A 1C 07 AB 73 65 CB 28 EE 51 ED D3 3C F2 50 6D E8 88 FB AD D6 0E BF 80 48 1C BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 99 98 D3 63 C4 91 BE 16 BD 74 BA 10 B9 4D 92 91 00 16 11 73 6F DC A6 43 A3 66 64 BC 0F 31 5A 42 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 9E 4A 69 17 31 61 68 2E 55 FD E8 FE F5 60 EB 88 EC 1F FE DC AF 04 00 1F 66 C0 CA F7 07 B2 B7 34 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B A6 B5 15 1F 36 55 D3 A2 AF 0D 47 27 59 79 6B E4 A4 20 0E 54 95 A7 D8 69 75 4C 48 48 85 74 08 A7 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B A7 F3 2F 50 8D 4E B0 FE AD 9A 08 7E F9 4E D1 BA 0A EC 5D E6 F7 EF 6F F0 A6 2B 93 BE DF 5D 45 8D BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B AD 68 26 E1 94 6D 26 D3 EA F3 68 5C 88 D9 7D 85 DE 3B 4D CB 3D 0E E2 AE 81 C7 05 60 D1 3C 57 20 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B AE EB AE 31 51 27 12 73 ED 95 AA 2E 67 11 39 ED 31 A9 85 67 30 3A 33 22 98 F8 37 09 A9 D5 5A A1 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B AF E2 03 0A FB 7D 2C DA 13 F9 FA 33 3A 02 E3 4F 67 51 AF EC 11 B0 10 DB CD 44 1F DF 4C 40 02 B3 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B B5 4F 1E E6 36 63 1F AD 68 05 8D 3B 09 37 03 1A C1 B9 0C CB 17 06 2A 39 1C CA 68 AF DB E4 0D 55 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B B8 F0 78 D9 83 A2 4A C4 33 21 63 93 88 35 14 CD 93 2C 33 AF 18 E7 DD 70 88 4C 82 35 F4 27 57 36 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B B9 7A 08 89 05 9C 03 5F F1 D5 4B 6D B5 3B 11 B9 76 66 68 D9 F9 55 24 7C 02 8B 28 37 D7 A0 4C D9 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B BC 87 A6 68 E8 19 66 48 9C B5 08 EE 80 51 83 C1 9E 6A CD 24 CF 17 79 9C A0 62 D2 E3 84 DA 0E A7 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C4 09 BD AC 47 75 AD D8 DB 92 AA 22 B5 B7 18 FB 8C 94 A1 46 2C 1F E9 A4 16 B9 5D 8A 33 88 C2 FC BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C6 17 C1 A8 B1 EE 2A 81 1C 28 B5 A8 1B 4C 83 D7 C9 8B 5B 0C 27 28 1D 61 02 07 EB E6 92 C2 96 7F BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C9 0F 33 66 17 B8 E7 F9 83 97 54 13 C9 97 F1 0B 73 EB 26 7F D8 A1 0C B9 E3 BD BF C6 67 AB DB 8B BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B CB 6B 85 8B 40 D3 A0 98 76 58 15 B5 92 C1 51 4A 49 60 4F AF D6 08 19 DA 88 D7 A7 6E 97 78 FE F7 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B CE 3B FA BE 59 D6 7C E8 AC 8D FD 4A 16 F7 C4 3E F9 C2 24 51 3F BC 65 59 57 D7 35 FA 29 F5 40 CE BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B D8 CB EB 97 35 F5 67 2B 36 7E 4F 96 CD C7 49 69 61 5D 17 07 4A E9 6C 72 4D 42 CE 02 16 F8 F3 FA BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B E9 2C 22 EB 3B 56 42 D6 5C 1E C2 CA F2 47 D2 59 47 38 EE BB 7F B3 84 1A 44 95 6F 59 E2 B0 D1 FA BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B FD DD 6E 3D 29 EA 84 C7 74 3D AD 4A 1B DB C7 00 B5 FE C1 B3 91 F9 32 40 90 86 AC C7 1D D6 DB D8 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B FE 63 A8 4F 78 2C C9 D3 FC F2 CC F9 FC 11 FB D0 37 60 87 87 58 D2 62 85 ED 12 66 9B DC 6E 6D 01 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B FE CF B2 32 D1 2E 99 4B 6D 48 5D 2C 71 67 72 8A A5 52 59 84 AD 5C A6 1E 75 16 22 1F 07 9A 14 36 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B CA 17 1D 61 4A 8D 7E 12 1C 93 94 8C D0 FE 55 D3 99 81 F9 D1 1A A9 6E 03 45 0A 41 52 27 C2 C6 5B BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 55 B9 9B 0D E5 3D BC FE 48 5A A9 C7 37 CF 3F B6 16 EF 3D 91 FA B5 99 AA 7C AB 19 ED A7 63 B5 BA BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 77 DD 19 0F A3 0D 88 FF 5E 3B 01 1A 0A E6 1E 62 09 78 0C 13 0B 53 5E CB 87 E6 F0 88 8A 0B 6B 2F BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B C8 3C B1 39 22 AD 99 F5 60 74 46 75 DD 37 CC 94 DC AD 5A 1F CB A6 47 2F EE 34 11 71 D9 39 E8 84 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 3B 02 87 53 3E 0C C3 D0 EC 1A A8 23 CB F0 A9 41 AA D8 72 15 79 D1 C4 99 80 2D D1 C3 A6 36 B8 A9 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 93 9A EE F4 F5 FA 51 E2 33 40 C3 F2 E4 90 48 CE 88 72 52 6A FD F7 52 C3 A7 F3 A3 F2 BC 9F 60 49 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 64 57 5B D9 12 78 9A 2E 14 AD 56 F6 34 1F 52 AF 6B F8 0C F9 44 00 78 59 75 E9 F0 4E 2D 64 D7 45 BD 9A FA 77 59 03 32 4D BD 60 28 F4 E7 8F 78 4B 45 C7 C8 AE 75 0A CF BB 48 FC 37 52 7D 64 12 DD 64 4D AE D8 91 3C CD 8A 24 C9 4D 85 69 67 DF 8E 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000009
+Event PCRIndex            : 00000007 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000010
+Event PCRIndex            : 00000002 
+Event eventType           : 80000008 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : F9 95 FF 2C 65 DA C4 C2 58 49 BB 2C B8 38 AC 3D D0 0B BF 99 20 8D 91 00 A0 F1 F4 A9 8E A9 6F 7B 
+Event dataSize            : 00000010 
+Event Data                : C0 24 B1 80 00 00 00 00 00 00 01 00 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000011
+Event PCRIndex            : 00000000 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000012
+Event PCRIndex            : 00000001 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000013
+Event PCRIndex            : 00000002 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000014
+Event PCRIndex            : 00000003 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000015
+Event PCRIndex            : 00000004 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000016
+Event PCRIndex            : 00000005 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000017
+Event PCRIndex            : 00000006 
+Event eventType           : 00000004 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 3F 61 98 04 A9 2F DB 40 57 19 2D C4 3D D7 48 EA 77 8A DC 52 BC 49 8C E8 05 24 C0 14 B8 11 19 
+Event dataSize            : 00000004 
+Event Data                : 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000018
+Event PCRIndex            : 00000005 
+Event eventType           : 80000006 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 27 BB 21 64 21 B4 22 30 57 D9 55 21 E2 09 0D 00 56 90 A8 DB C5 43 AA AA 62 89 56 E8 14 8F D9 09 
+Event dataSize            : 000001e4 
+Event Data                : 45 46 49 20 50 41 52 54 00 00 01 00 5C 00 00 00 E0 F4 1A AF 00 00 00 00 01 00 00 00 00 00 00 00 AF 6D 70 74 00 00 00 00 22 00 00 00 00 00 00 00 8E 6D 70 74 00 00 00 00 A9 BD C7 0F C7 5E E5 43 84 BA CC 36 7D 39 2F 87 02 00 00 00 00 00 00 00 80 00 00 00 80 00 00 00 9D 18 1D 6A 03 00 00 00 00 00 00 00 28 73 2A C1 1F F8 D2 11 BA 4B 00 A0 C9 3E C9 3B D9 E4 C2 54 7A C4 75 41 B9 42 4F 4F 88 A5 84 DF 00 08 00 00 00 00 00 00 FF 47 06 00 00 00 00 00 00 00 00 00 00 00 00 00 45 00 46 00 49 00 20 00 53 00 79 00 73 00 74 00 65 00 6D 00 20 00 50 00 61 00 72 00 74 00 69 00 74 00 69 00 6F 00 6E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 AF 3D C6 0F 83 84 72 47 8E 79 3D 69 D8 47 7D E4 00 30 C1 87 5E 79 BF 45 9E 9E E7 09 29 BB 89 AC 00 48 06 00 00 00 00 00 FF 47 26 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 79 D3 D6 E6 07 F5 C2 44 A2 3C 23 8F 2A 3D F9 28 98 FD C5 6E 45 5E 05 4B 92 9D C2 DF E1 76 48 12 00 48 26 00 00 00 00 00 FF 67 70 74 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000019
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D4 6F 91 80 D0 FA C4 F6 C4 68 FD 4F 02 90 64 75 99 AE B5 61 68 3A E2 4A E6 D5 6D 18 9C D0 F1 A5 
+Event dataSize            : 0000003e 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 09 00 00 00 00 00 00 00 0C 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 4F 00 72 00 64 00 65 00 72 00 05 00 04 00 01 00 02 00 03 00 00 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000020
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 4B AA 83 11 7D 9C 0C 21 BB 25 D9 44 53 1A C7 C5 E7 AB 97 42 E5 84 96 F4 84 0C E7 6E BB C2 AE AE 
+Event dataSize            : 000000eb 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 BB 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 35 00 01 00 00 00 6B 00 43 00 54 00 31 00 30 00 30 00 30 00 50 00 31 00 53 00 53 00 44 00 38 00 20 00 3A 00 20 00 50 00 41 00 52 00 54 00 20 00 30 00 20 00 3A 00 20 00 42 00 6F 00 6F 00 74 00 20 00 44 00 72 00 69 00 76 00 65 00 00 00 05 01 09 00 02 00 00 00 00 7F FF 04 00 02 01 0C 00 D0 41 03 0A 00 00 00 00 01 01 06 00 00 1D 01 01 06 00 00 00 03 17 10 00 01 00 00 00 00 00 00 00 00 00 00 00 7F FF 04 00 01 04 2E 00 EF 47 64 2D C9 3B A0 41 AC 19 4D 51 D0 1B 4C E6 43 00 54 00 31 00 30 00 30 00 30 00 50 00 31 00 53 00 53 00 44 00 38 00 00 00 7F FF 04 00 00 00 42 4F 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000021
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 03 FC DC 6D 74 5A 9A A3 CB 11 29 33 91 4D 32 2F F8 F5 65 35 4F 39 F4 D2 93 05 E1 78 A2 6B 9E 1D 
+Event dataSize            : 0000009e 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 6E 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 34 00 01 00 00 00 5C 00 73 00 68 00 65 00 6C 00 6C 00 00 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 D9 E4 C2 54 7A C4 75 41 B9 42 4F 4F 88 A5 84 DF 02 02 04 04 2E 00 5C 00 45 00 46 00 49 00 5C 00 73 00 68 00 65 00 6C 00 6C 00 5C 00 53 00 68 00 65 00 6C 00 6C 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000022
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : A1 E2 18 BD 3A 93 A4 C5 66 F8 84 2F 9F C4 6C 9C 90 70 15 D6 CA 4E 75 0C 85 63 A7 82 A2 FC 81 AB 
+Event dataSize            : 000000be 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 8E 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 31 00 09 00 00 00 7A 00 75 00 62 00 75 00 6E 00 74 00 75 00 00 00 01 04 14 00 E7 75 E2 99 A0 75 37 4B A2 E6 C5 38 5E 6C 00 CB 7F FF 04 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 CE 39 75 2D 97 17 A5 46 9C 17 F0 54 AF 6D D1 D3 02 02 04 04 34 00 5C 00 45 00 46 00 49 00 5C 00 75 00 62 00 75 00 6E 00 74 00 75 00 5C 00 73 00 68 00 69 00 6D 00 78 00 36 00 34 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000023
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : AA 66 62 A4 F9 A1 C1 E7 6C B4 55 35 E5 C8 24 00 E4 09 7B 88 A1 2D FA 28 80 30 B6 DF 01 32 19 58 
+Event dataSize            : 000000be 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 8E 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 32 00 09 00 00 00 7A 00 43 00 65 00 6E 00 74 00 4F 00 53 00 00 00 01 04 14 00 E7 75 E2 99 A0 75 37 4B A2 E6 C5 38 5E 6C 00 CB 7F FF 04 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 CE 39 75 2D 97 17 A5 46 9C 17 F0 54 AF 6D D1 D3 02 02 04 04 34 00 5C 00 45 00 46 00 49 00 5C 00 63 00 65 00 6E 00 74 00 6F 00 73 00 5C 00 73 00 68 00 69 00 6D 00 78 00 36 00 34 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000024
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 08 1A 0D 06 15 6B AE C3 41 05 23 29 F8 88 34 0A DC 2C AA B9 81 5A 56 F1 0A FF 5F 55 B3 9E 40 86 
+Event dataSize            : 000000be 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 8E 00 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 33 00 09 00 00 00 7A 00 46 00 65 00 64 00 6F 00 72 00 61 00 00 00 01 04 14 00 E7 75 E2 99 A0 75 37 4B A2 E6 C5 38 5E 6C 00 CB 7F FF 04 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 D9 E4 C2 54 7A C4 75 41 B9 42 4F 4F 88 A5 84 DF 02 02 04 04 34 00 5C 00 45 00 46 00 49 00 5C 00 66 00 65 00 64 00 6F 00 72 00 61 00 5C 00 73 00 68 00 69 00 6D 00 78 00 36 00 34 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000025
+Event PCRIndex            : 00000001 
+Event eventType           : 80000002 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 6E 83 1B DD B6 6F 79 6E 64 21 37 9F F9 27 AE 46 9D DA 32 41 0B EB EF 05 03 C6 1D FB 9C CE 32 73 
+Event dataSize            : 00000174 
+Event Data                : 61 DF E4 8B CA 93 D2 11 AA 0D 00 E0 98 03 2B 8C 08 00 00 00 00 00 00 00 44 01 00 00 00 00 00 00 42 00 6F 00 6F 00 74 00 30 00 30 00 30 00 30 00 09 00 00 00 8C 00 57 00 69 00 6E 00 64 00 6F 00 77 00 73 00 20 00 42 00 6F 00 6F 00 74 00 20 00 4D 00 61 00 6E 00 61 00 67 00 65 00 72 00 00 00 01 04 14 00 E7 75 E2 99 A0 75 37 4B A2 E6 C5 38 5E 6C 00 CB 7F FF 04 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 20 08 00 00 00 00 00 50 E7 A0 49 A0 F7 0D 48 9A 0E C7 38 22 9D E7 BD 02 02 04 04 46 00 5C 00 45 00 46 00 49 00 5C 00 4D 00 69 00 63 00 72 00 6F 00 73 00 6F 00 66 00 74 00 5C 00 42 00 6F 00 6F 00 74 00 5C 00 62 00 6F 00 6F 00 74 00 6D 00 67 00 66 00 77 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 57 49 4E 44 4F 57 53 00 01 00 00 00 88 00 00 00 78 00 00 00 42 00 43 00 44 00 4F 00 42 00 4A 00 45 00 43 00 54 00 3D 00 7B 00 39 00 64 00 65 00 61 00 38 00 36 00 32 00 63 00 2D 00 35 00 63 00 64 00 64 00 2D 00 34 00 65 00 37 00 30 00 2D 00 61 00 63 00 63 00 31 00 2D 00 66 00 33 00 32 00 62 00 33 00 34 00 34 00 64 00 34 00 37 00 39 00 35 00 7D 00 00 00 00 00 01 00 00 00 10 00 00 00 04 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000026
+Event PCRIndex            : 00000004 
+Event eventType           : 80000003 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 29 44 DA 09 88 61 61 9E 21 B5 22 A6 42 23 5B B2 EC 18 9F F2 0E F9 6E 10 0B 2F FD D9 A3 9C 34 16 
+Event dataSize            : 000000a4 
+Event Data                : 18 90 91 85 00 00 00 00 C0 85 0E 00 00 00 00 00 00 00 00 00 00 00 00 00 84 00 00 00 00 00 00 00 02 01 0C 00 D0 41 03 0A 00 00 00 00 01 01 06 00 00 1D 01 01 06 00 00 00 03 17 10 00 01 00 00 00 00 00 00 00 00 00 00 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 D9 E4 C2 54 7A C4 75 41 B9 42 4F 4F 88 A5 84 DF 02 02 04 04 2E 00 5C 00 45 00 46 00 49 00 5C 00 73 00 68 00 65 00 6C 00 6C 00 5C 00 53 00 68 00 65 00 6C 00 6C 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000027
+Event PCRIndex            : 00000004 
+Event eventType           : 80000003 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : F2 B7 52 D0 D8 20 12 23 D7 85 19 9A 25 A3 C8 14 AE C4 04 C5 40 8A 69 1B 48 74 A5 21 71 28 B6 0F 
+Event dataSize            : 000000aa 
+Event Data                : 18 90 85 85 00 00 00 00 48 89 1A 00 00 00 00 00 00 00 00 00 00 00 00 00 8A 00 00 00 00 00 00 00 02 01 0C 00 D0 41 03 0A 00 00 00 00 01 01 06 00 00 1D 01 01 06 00 00 00 03 17 10 00 01 00 00 00 00 00 00 00 00 00 00 00 04 01 2A 00 01 00 00 00 00 08 00 00 00 00 00 00 00 40 06 00 00 00 00 00 D9 E4 C2 54 7A C4 75 41 B9 42 4F 4F 88 A5 84 DF 02 02 04 04 34 00 5C 00 45 00 46 00 49 00 5C 00 66 00 65 00 64 00 6F 00 72 00 61 00 5C 00 67 00 72 00 75 00 62 00 78 00 36 00 34 00 2E 00 65 00 66 00 69 00 00 00 7F FF 04 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000028
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : BA 96 CD 80 10 0B 0D F1 22 32 47 2C 34 BC BC CC 6C CF A1 BC 7E 57 01 18 2F 3D 21 90 41 C3 3A C5 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 70 61 67 65 72 3D 31 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000029
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 16 E2 EF 44 B0 DF 43 0E E1 CC C8 29 87 DF D2 28 E5 E0 13 59 A4 C3 F1 C4 E4 11 0B 3D 1D C8 B1 08 
+Event dataSize            : 0000002e 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 2D 66 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 2F 67 72 75 62 65 6E 76 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000030
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : AD 7A 5C AE DB C2 9A D4 BD 5B 59 C2 80 01 2B 23 4A 90 65 8F 91 36 D2 C5 94 86 28 57 0C 12 29 9D 
+Event dataSize            : 00000033 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6C 6F 61 64 5F 65 6E 76 20 2D 66 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 2F 67 72 75 62 65 6E 76 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000031
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : BB DF DA 09 47 5C 0B B2 51 8C 48 51 78 EE 77 B5 07 A8 EB 65 36 5B A5 02 32 DB E1 D1 B7 3F 84 64 
+Event dataSize            : 0000000e 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000032
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : AE DA AE A3 C9 CF 22 CA BE C1 47 44 25 84 8E 82 97 7A A9 4D 20 98 7A 05 50 C6 AF 51 CB 43 CC D1 
+Event dataSize            : 0000004d 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 64 65 66 61 75 6C 74 3D 65 66 64 65 32 32 66 30 37 35 65 38 34 36 36 39 39 39 34 31 33 34 65 64 38 62 33 31 32 63 65 66 2D 35 2E 31 2E 31 35 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000033
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 13 21 DD 86 A5 40 4E 69 BA B0 C4 96 E5 A3 D4 9D B0 1B 95 44 04 22 D8 BE 2A 07 E1 DB 6C 4A 80 2A 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 78 79 20 3D 20 78 79 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000034
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D4 6B 5D 38 52 0A B3 A2 51 44 0F 37 06 A1 F0 CA 43 3A 64 EA DC 2B 0F EE 55 78 D7 E8 FD 67 60 72 
+Event dataSize            : 00000022 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 5F 69 64 5F 6F 70 74 69 6F 6E 3D 2D 2D 69 64 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000035
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : C1 05 8A 7A 87 F5 1D BA 73 50 0B 5A 17 E9 39 A7 CA 82 F3 98 D5 49 B0 3C 26 F6 EF 5E EC 2A 1A DD 
+Event dataSize            : 00000024 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 65 78 70 6F 72 74 20 6D 65 6E 75 65 6E 74 72 79 5F 69 64 5F 6F 70 74 69 6F 6E 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000036
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : BB DF DA 09 47 5C 0B B2 51 8C 48 51 78 EE 77 B5 07 A8 EB 65 36 5B A5 02 32 DB E1 D1 B7 3F 84 64 
+Event dataSize            : 0000000e 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000037
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 73 E6 0E AF 5E 1E 14 A3 13 81 6A B4 F3 C5 EE 18 AD 67 FF 5A 79 FE 04 16 8C 36 D4 1C 15 74 B1 D7 
+Event dataSize            : 00000021 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 74 65 72 6D 69 6E 61 6C 5F 6F 75 74 70 75 74 20 63 6F 6E 73 6F 6C 65 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000038
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 13 21 DD 86 A5 40 4E 69 BA B0 C4 96 E5 A3 D4 9D B0 1B 95 44 04 22 D8 BE 2A 07 E1 DB 6C 4A 80 2A 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 78 79 20 3D 20 78 79 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000039
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D2 5E BE 40 C2 D3 70 67 BB DA 2C 28 4C C9 C1 03 65 2F 12 98 6E 27 03 5A 63 2C 0C 07 5B ED 0E 61 
+Event dataSize            : 00000020 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 74 69 6D 65 6F 75 74 5F 73 74 79 6C 65 3D 6D 65 6E 75 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000040
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 86 69 C9 65 DE 1E 7C AB D1 ED 2A 8F 11 9B 7D CA 32 6B 97 22 3F D8 F8 BF 2F C6 61 97 3A 41 A1 3B 
+Event dataSize            : 00000017 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 74 69 6D 65 6F 75 74 3D 35 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000041
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 02 A8 5C CF 55 9B 63 A5 E4 21 3D B2 D7 54 4F 66 1E 90 D0 93 5A 40 D5 39 25 6E BB A1 B4 4D CD CC 
+Event dataSize            : 0000002f 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 2D 66 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 2F 75 73 65 72 2E 63 66 67 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000042
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D9 5F 0F 1D 76 6D A7 BD 04 AF D4 02 4E 2C A4 BE 39 71 B7 E5 57 1E E7 77 EC C6 43 53 09 89 C5 2F 
+Event dataSize            : 0000001a 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 69 6E 63 72 65 6D 65 6E 74 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000043
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 3A FB 36 26 5E 6C DB B0 52 BE A6 20 62 27 8E DE C5 68 76 B9 FB C7 CA 71 B2 35 FD 32 F9 81 A0 AB 
+Event dataSize            : 0000001a 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 2D 6E 20 20 2D 61 20 30 20 3D 20 30 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000044
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 0C B0 FE BC BB F4 02 1F BD 2C 68 6D 48 1E 92 D0 17 9D 45 D3 97 55 02 95 06 57 FE B4 F4 A9 2B 12 
+Event dataSize            : 000002db 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 32 2E 30 2D 72 63 33 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 32 2E 30 2D 72 63 33 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 32 2E 30 2D 72 63 33 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000045
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 6A 3F F6 16 4D 72 32 2C 4B 24 C6 66 9E A7 20 44 51 4B 4C 05 56 DB 93 5E E6 EE 46 FA 24 F4 7D 06 
+Event dataSize            : 000002e7 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 32 2E 30 2D 72 63 33 2E 6F 6C 64 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 32 2E 30 2D 72 63 33 2E 6F 6C 64 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 32 2E 30 2D 72 63 33 2E 6F 6C 64 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000046
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 95 CC F9 1A 60 A2 7E C7 95 41 20 BE AB 8D 4B E8 68 5C E7 DF 1C D6 64 59 04 EE 64 A6 3E F1 EC 33 
+Event dataSize            : 00000345 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000047
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 7D D0 C5 9E 6B 51 18 14 F4 C5 78 EA 9B C1 44 FA E0 F9 01 38 C9 E0 71 2C AE 14 A1 21 67 81 F6 97 
+Event dataSize            : 00000345 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000048
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : A4 0D 14 1F 4A 27 62 B6 28 22 66 C1 8C C2 A0 CE CE 90 BB 3B 79 4A F2 CF E2 01 08 D2 7B FE 7A 61 
+Event dataSize            : 00000355 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000049
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : E8 C2 C1 D9 29 B4 A9 63 C8 3C 91 B9 A4 7E 78 8D B1 94 B5 BC B5 11 D6 25 82 D9 0D 75 A4 52 94 5D 
+Event dataSize            : 0000035d 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 31 32 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000050
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 65 68 EB E6 D4 C5 E8 E4 09 5D 14 55 4F 65 39 B9 88 46 CA 73 D8 66 19 25 66 46 ED A4 05 A5 1D 7E 
+Event dataSize            : 0000035d 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 31 31 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000051
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 3D 63 E5 58 D1 0B 8F 81 2A 04 26 8F 73 70 B6 D0 1A 81 24 56 B1 E7 DE BF 8B 73 67 29 0A 62 7C AD 
+Event dataSize            : 00000359 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 39 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 39 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 39 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 39 2D 33 30 30 2E 66 63 33 30 2E 78 38 36 5F 36 34 2B 64 65 62 75 67 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000052
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : B8 5F AF 52 23 E8 9C 53 BB 7A 12 11 77 E5 58 95 7D 39 D8 E0 16 76 C1 6A 0A 1B 50 1E 0F 3A 51 E9 
+Event dataSize            : 00000332 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 38 2D 33 30 30 2E 41 76 61 6E 69 5F 6B 65 72 6E 65 6C 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 6F 6C 64 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 35 2E 31 2E 38 2D 33 30 30 2E 41 76 61 6E 69 5F 6B 65 72 6E 65 6C 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 6F 6C 64 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 38 2D 33 30 30 2E 41 76 61 6E 69 5F 6B 65 72 6E 65 6C 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 6F 6C 64 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000053
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 70 10 BD D2 F5 C8 95 77 76 B1 16 19 1D 2B 04 69 FF D3 7B F6 EB 3E BD 19 31 5A B8 67 49 5E 7B 98 
+Event dataSize            : 0000037c 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 46 65 64 6F 72 61 20 28 30 2D 72 65 73 63 75 65 2D 65 66 64 65 32 32 66 30 37 35 65 38 34 36 36 39 39 39 34 31 33 34 65 64 38 62 33 31 32 63 65 66 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 20 2D 2D 63 6C 61 73 73 20 66 65 64 6F 72 61 20 2D 2D 63 6C 61 73 73 20 67 6E 75 2D 6C 69 6E 75 78 20 2D 2D 63 6C 61 73 73 20 67 6E 75 20 2D 2D 63 6C 61 73 73 20 6F 73 20 2D 2D 75 6E 72 65 73 74 72 69 63 74 65 64 20 2D 2D 69 64 20 67 6E 75 6C 69 6E 75 78 2D 30 2D 72 65 73 63 75 65 2D 65 66 64 65 32 32 66 30 37 35 65 38 34 36 36 39 39 39 34 31 33 34 65 64 38 62 33 31 32 63 65 66 2D 61 64 76 61 6E 63 65 64 2D 32 65 61 37 34 30 37 65 2D 61 30 38 62 2D 34 31 62 61 2D 61 35 33 65 2D 30 63 33 32 39 39 34 65 38 39 32 32 20 7B 0A 09 6C 6F 61 64 5F 76 69 64 65 6F 0A 09 69 6E 73 6D 6F 64 20 67 7A 69 6F 0A 09 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 09 69 6E 73 6D 6F 64 20 65 78 74 32 0A 09 69 66 20 5B 20 78 24 66 65 61 74 75 72 65 5F 70 6C 61 74 66 6F 72 6D 5F 73 65 61 72 63 68 5F 68 69 6E 74 20 3D 20 78 79 20 5D 3B 20 74 68 65 6E 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 65 6C 73 65 0A 09 20 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 0A 09 66 69 0A 09 6C 69 6E 75 78 09 2F 76 6D 6C 69 6E 75 7A 2D 30 2D 72 65 73 63 75 65 2D 65 66 64 65 32 32 66 30 37 35 65 38 34 36 36 39 39 39 34 31 33 34 65 64 38 62 33 31 32 63 65 66 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 20 0A 09 69 6E 69 74 72 64 09 2F 69 6E 69 74 72 61 6D 66 73 2D 30 2D 72 65 73 63 75 65 2D 65 66 64 65 32 32 66 30 37 35 65 38 34 36 36 39 39 39 34 31 33 34 65 64 38 62 33 31 32 63 65 66 2E 69 6D 67 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000054
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D9 5F 0F 1D 76 6D A7 BD 04 AF D4 02 4E 2C A4 BE 39 71 B7 E5 57 1E E7 77 EC C6 43 53 09 89 C5 2F 
+Event dataSize            : 0000001a 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 69 6E 63 72 65 6D 65 6E 74 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000055
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DF 2B 73 4C AA 4B EF 20 25 12 01 2F 28 D1 A6 42 BE B3 7F 20 DD A9 2E A2 AE 64 BC F0 28 E6 B9 54 
+Event dataSize            : 0000001c 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 30 20 3D 20 31 20 2D 6F 20 30 20 3D 20 31 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000056
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 05 F6 AC 88 F7 D1 44 C3 FD 87 9A 69 E9 A8 A4 5F 2E 59 75 1E 47 4F DE 98 B9 84 95 3E BA A9 CE 55 
+Event dataSize            : 0000001c 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 6D 65 6E 75 5F 68 69 64 65 5F 6F 6B 3D 30 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000057
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D0 A1 F8 99 D8 12 E2 3B 3B 45 8D 7A B5 6F 28 68 11 91 80 38 E8 82 5E A1 38 0E 38 3B 53 0B 44 C6 
+Event dataSize            : 00000013 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 30 20 3D 20 31 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000058
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 0B 47 14 C7 16 8A 4B 43 D4 C3 B6 F6 43 4F 2E CB AF B4 20 5E 98 2E E8 C5 C6 8B 17 D3 55 BC CF 9B 
+Event dataSize            : 00000026 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 63 72 65 6D 65 6E 74 20 62 6F 6F 74 5F 69 6E 64 65 74 65 72 6D 69 6E 61 74 65 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000059
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : B8 7B 31 47 66 97 1F 7A 3F 97 AB F0 A5 FB 66 47 F8 C3 54 A6 11 31 C2 1F 04 0B 29 54 1F 90 E8 2D 
+Event dataSize            : 0000001c 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 62 6F 6F 74 5F 73 75 63 63 65 73 73 3D 30 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000060
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 11 1D 42 E3 10 CB 44 BD F4 4D 90 BF E9 3A 66 A9 1B E6 EC D4 35 57 17 F0 DF 23 D7 2C 47 F3 44 25 
+Event dataSize            : 00000032 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 61 76 65 5F 65 6E 76 20 62 6F 6F 74 5F 73 75 63 63 65 73 73 20 62 6F 6F 74 5F 69 6E 64 65 74 65 72 6D 69 6E 61 74 65 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000061
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 13 21 DD 86 A5 40 4E 69 BA B0 C4 96 E5 A3 D4 9D B0 1B 95 44 04 22 D8 BE 2A 07 E1 DB 6C 4A 80 2A 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 78 79 20 3D 20 78 79 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000062
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : BB DF DA 09 47 5C 0B B2 51 8C 48 51 78 EE 77 B5 07 A8 EB 65 36 5B A5 02 32 DB E1 D1 B7 3F 84 64 
+Event dataSize            : 0000000e 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000063
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 1D 5E E5 B4 5B 9A D7 16 A8 8F DF CC 09 B3 10 41 DF EA 6E 9C DF FE 58 37 E2 A0 42 EF CD 73 D2 0F 
+Event dataSize            : 00000018 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 31 20 2D 61 20 30 20 3D 20 31 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000064
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 63 19 8E 3E F0 86 58 94 76 1E 00 4F 11 9F AA 89 E3 C9 21 57 D8 84 14 40 15 12 29 8D 28 85 D5 03 
+Event dataSize            : 00000040 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 53 79 73 74 65 6D 20 73 65 74 75 70 20 2D 2D 69 64 20 75 65 66 69 2D 66 69 72 6D 77 61 72 65 20 7B 0A 09 66 77 73 65 74 75 70 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000065
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : DD FD 6E 21 9E 30 22 BD 30 5F DD 9D 73 30 C4 49 A0 3A 80 79 73 81 51 00 3B 0D E0 AD 53 C1 84 E5 
+Event dataSize            : 0000008e 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6D 65 6E 75 65 6E 74 72 79 20 45 46 49 20 73 68 65 6C 6C 20 7B 0A 20 20 20 20 20 20 20 20 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 0A 20 20 20 20 20 20 20 20 69 6E 73 6D 6F 64 20 63 68 61 69 6E 0A 20 20 20 20 20 20 20 20 73 65 74 20 72 6F 6F 74 3D 27 28 68 64 30 2C 67 70 74 31 29 27 0A 20 20 20 20 20 20 20 20 63 68 61 69 6E 6C 6F 61 64 65 72 20 2F 73 68 65 6C 6C 78 36 34 2E 65 66 69 0A 7D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000066
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D2 B3 F6 BE 77 61 FE 97 54 C3 24 61 01 97 4E 64 68 7E 61 79 AE 4C BF AE 31 6A 7E A8 2E 48 0F 4E 
+Event dataSize            : 00000031 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 2D 66 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 2F 63 75 73 74 6F 6D 2E 63 66 67 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000067
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 3B D6 59 6E 70 56 AF C3 94 52 2A CA 92 3A 10 70 99 AB 62 CE C6 2B 8D 06 08 B4 A6 46 2C BB 86 DC 
+Event dataSize            : 0000004d 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 2D 7A 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 20 2D 61 20 2D 66 20 28 68 64 30 2C 67 70 74 31 29 2F 45 46 49 2F 66 65 64 6F 72 61 2F 63 75 73 74 6F 6D 2E 63 66 67 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000068
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 6C BB C4 E3 B4 FD DC F0 CB 60 CD E3 8D E6 10 6F 3C 02 72 7F 0A 33 BC 90 87 60 E0 30 F4 93 10 1A 
+Event dataSize            : 00000050 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 70 61 72 61 6D 73 20 46 65 64 6F 72 61 20 28 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 29 20 33 30 20 28 57 6F 72 6B 73 74 61 74 69 6F 6E 20 45 64 69 74 69 6F 6E 29 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000069
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 57 86 6B DB 9A FB C6 5D EF A4 F3 60 69 83 49 5F C3 A1 36 60 2D 3F 4A B8 AA A7 A8 B7 4A A8 95 74 
+Event dataSize            : 00000014 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6C 6F 61 64 5F 76 69 64 65 6F 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000070
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 13 21 DD 86 A5 40 4E 69 BA B0 C4 96 E5 A3 D4 9D B0 1B 95 44 04 22 D8 BE 2A 07 E1 DB 6C 4A 80 2A 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 78 79 20 3D 20 78 79 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000071
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : EB CB 21 D2 98 5D 23 4E 5A BF 6B 85 41 8C 51 10 16 63 3E 58 CE FC 08 FB CB FD 3E A6 E2 A4 8A 4E 
+Event dataSize            : 0000001a 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 61 6C 6C 5F 76 69 64 65 6F 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000072
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 65 B4 A8 AB 34 1D 16 C9 EE D3 52 13 E7 EA 4F E1 BA 66 AC 28 93 5E B0 E6 20 8C 61 B6 5C 71 82 0E 
+Event dataSize            : 0000001d 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 74 20 67 66 78 70 61 79 6C 6F 61 64 3D 6B 65 65 70 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000073
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : C2 55 03 95 DC BB EC 4D 07 4F 0A 45 76 FD 29 BA 13 04 BA 71 F5 D3 89 1C 0D 86 24 8F 9D 99 C5 F4 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 67 7A 69 6F 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000074
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 8E 4F 46 29 66 1D 79 3C 10 D1 CD 45 D7 00 96 51 63 D5 9F 9E E8 4B A1 A2 C9 5A 2C 21 26 16 9B CF 
+Event dataSize            : 00000019 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 70 61 72 74 5F 67 70 74 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000075
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 7F 02 EE F6 CB 9E 20 02 1B 8F 60 31 93 F3 D5 5E 37 77 A5 D5 64 31 63 DF 49 16 AA A2 3A 7C 96 28 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 73 6D 6F 64 20 65 78 74 32 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000076
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 13 21 DD 86 A5 40 4E 69 BA B0 C4 96 E5 A3 D4 9D B0 1B 95 44 04 22 D8 BE 2A 07 E1 DB 6C 4A 80 2A 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 5B 20 78 79 20 3D 20 78 79 20 5D 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000077
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 20 49 4B 16 B4 7A 45 81 F6 BA 3A C0 7C C6 D4 D3 B5 50 0E D1 27 BA 63 B5 31 FD BE 10 81 EE A5 FA 
+Event dataSize            : 00000056 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 73 65 61 72 63 68 20 2D 2D 6E 6F 2D 66 6C 6F 70 70 79 20 2D 2D 66 73 2D 75 75 69 64 20 2D 2D 73 65 74 3D 72 6F 6F 74 20 30 39 35 34 37 38 38 35 2D 63 65 62 34 2D 34 35 38 31 2D 61 62 33 31 2D 61 32 30 35 64 38 38 39 36 62 31 61 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000078
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 9B 73 6A 0D AD 62 03 23 78 BE AF 1C 8F 89 E8 80 7D 10 12 7B CF B5 77 6D 20 8C 97 2D C0 0F 14 BD 
+Event dataSize            : 0000010f 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 6C 69 6E 75 78 20 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000079
+Event PCRIndex            : 00000009 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : 21 18 2E 1F 99 65 50 08 1E 41 9E D7 F2 7B 38 3E A3 1A 68 C1 86 92 CC 2E A4 4D DA B1 FA 7F B9 24 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 6C 69 6E 75 78 65 66 69 20 4B 65 72 6E 65 6C 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000080
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : D3 91 59 9E 3C FC 0F 16 7E 86 1A FA 21 5C 3C E7 A4 94 99 13 EA D0 68 4D D6 6C DC D6 EC 20 E1 78 
+Event dataSize            : 00000114 
+Event Data                : 67 72 75 62 5F 6B 65 72 6E 65 6C 5F 63 6D 64 6C 69 6E 65 20 2F 76 6D 6C 69 6E 75 7A 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 20 72 6F 6F 74 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 72 6F 6F 74 20 72 6F 20 72 65 73 75 6D 65 3D 2F 64 65 76 2F 6D 61 70 70 65 72 2F 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 2D 6C 69 76 65 2D 73 77 61 70 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 72 6F 6F 74 20 72 64 2E 6C 76 6D 2E 6C 76 3D 66 65 64 6F 72 61 5F 6C 6F 63 61 6C 68 6F 73 74 2D 6C 69 76 65 2F 73 77 61 70 20 72 68 67 62 20 71 75 69 65 74 20 69 6D 61 5F 74 63 62 20 69 6D 61 5F 70 6F 6C 69 63 79 3D 74 63 62 20 69 6D 61 5F 74 65 6D 70 6C 61 74 65 3D 69 6D 61 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000081
+Event PCRIndex            : 00000008 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : B5 FC 2A 2D 0D 99 7E C9 29 54 C7 FF CB 90 A1 42 6E F1 20 50 44 65 13 29 9D E1 DB A3 BF 40 5B 17 
+Event dataSize            : 0000003a 
+Event Data                : 67 72 75 62 5F 63 6D 64 20 69 6E 69 74 72 64 20 2F 69 6E 69 74 72 61 6D 66 73 2D 35 2E 31 2E 39 2D 33 30 30 2E 55 70 38 61 2E 66 63 33 30 2E 78 38 36 5F 36 34 2E 69 6D 67 00 
+*****************TPM2.0-EVENT (CEL-TLV)*************************
+Event seqNumber           : 00000082
+Event PCRIndex            : 00000009 
+Event eventType           : 0000000d 
+Event Count               : 00000001 [1;33mCHECKING [0m[1;37m**: [0m[1;32mNumber of algorithms supported matches [0m
+Event Digests[0].AlgID    : 000b 
+Event Digests[0].Digest   : A9 43 07 2E D2 B0 5E 60 C6 02 86 E9 77 2C 85 1B AC E0 3C 53 26 9D B8 D2 89 8B F2 74 2C 97 5C 81 
+Event dataSize            : 00000015 
+Event Data                : 67 72 75 62 5F 6C 69 6E 75 78 65 66 69 20 49 6E 69 74 72 64 00 
