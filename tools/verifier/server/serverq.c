@@ -81,7 +81,7 @@ int main ()
 			printf("[Server] Server has got connected from %s.\n", inet_ntoa(addr_remote.sin_addr));
 
 		/*Receive File from Client */
-		char* fr_name = "/home/test/Downloads/demo/demo/demo1/receive.txt";
+		char* fr_name = "receive.txt";
 		FILE *fr = fopen(fr_name, "a");
 		if(fr == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr_name);
@@ -123,7 +123,7 @@ int main ()
 		/* Send File to Client */
 		//if(!fork())
 		//{
-		    char* fs_name = "/home/test/Downloads/demo/demo/demo1/ser/quote.sh";
+		    char* fs_name = "quote.sh";
 		    char sdbuf[LENGTH]; // Send buffer
 		    printf("[Server] Sending %s to the Client...\n", fs_name);
 		    FILE *fs = fopen(fs_name, "r");
@@ -146,8 +146,8 @@ int main ()
 		    }
 		    printf("[Server] Sent Ok to client!\n");
 
-		    /*Receive quote.out File from Client */
-		char* fr1_name = "/home/test/Downloads/demo/demo/demo1/ser/quote.out";
+		/*Receive quote.out File from Client */
+		char* fr1_name = "quote.out";
 		FILE *fr1 = fopen(fr1_name, "a");
 		if(fr1 == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr1_name);
@@ -184,8 +184,8 @@ int main ()
 			fclose(fr1); 
 		}
 
-		    /*Receive quote.out File from Client */
-		char* fr2_name = "/home/test/Downloads/demo/demo/demo1/ser/pcrs.out";
+		/*Receive quote.out File from Client */
+	/*	char* fr2_name = "/`pwd`/ser/pcrs.out";
 		FILE *fr2 = fopen(fr2_name, "a");
 		if(fr2 == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr2_name);
@@ -221,9 +221,9 @@ int main ()
 			printf("[Server] Received quote.out file from client!\n");
 			fclose(fr2); 
 		}
-
+*/
 		   /*Receive quote.out File from Client */
-		char* fr3_name = "/home/test/Downloads/demo/demo/demo1/ser/sig.out";
+		char* fr3_name = "sig.out";
 		FILE *fr3 = fopen(fr3_name, "a");
 		if(fr3 == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr3_name);
@@ -261,7 +261,7 @@ int main ()
 		}
 
 		   /*Receive quote.out File from Client */
-		char* fr4_name = "/home/test/Downloads/demo/demo/demo1/ser/akpub.pem";
+		char* fr4_name = "akpub.pem";
 		FILE *fr4 = fopen(fr4_name, "a");
 		if(fr4 == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr4_name);
@@ -300,7 +300,7 @@ int main ()
 
 
 		   /*Receive quote.out File from Client */
-		char* fr5_name = "/home/test/Downloads/demo/demo/demo1/ser/result";
+		char* fr5_name = "result";
 		FILE *fr5 = fopen(fr5_name, "a");
 		if(fr5 == NULL)
 			printf("File %s Cannot be opened file on server.\n", fr5_name);
@@ -339,10 +339,10 @@ int main ()
 
 
 		printf("[Server] generating checkquote on server!\n");
-	        system("chmod +x checkquote.sh ; ./checkquote.sh");
-		printf("[Server] storing the result in file for comparision!\n");
-		printf("[Server] generating checkquote on server!\n");   
-		system("chmod +x verify.sh ; ./verify.sh"); 
+	        //system("chmod +x checkquote.sh ; ./checkquote.sh");
+		//printf("[Server] storing the result in file for comparision!\n");
+		//printf("[Server] generating checkquote on server!\n");   
+		//system("chmod +x verify.sh ; ./verify.sh"); 
 
 		    success = 1;
 		

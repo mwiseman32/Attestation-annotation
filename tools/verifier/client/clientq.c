@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	//if(!fork())
 	//{     
 		system("chmod +x client.sh ; ./client.sh");
-		char* fs_name = "/home/test/Downloads/demo/demo/demo1/clientinfo.txt";
+		char* fs_name = "clientinfo.txt";
 		char sdbuf[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs_name);
 		FILE *fs = fopen(fs_name, "r");
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 	//system("chmod +x script1.sh ; ./script1.sh");
 	/* Receive File from Server */
 	printf("[Client] Receiveing file from Server and saving it as quote.sh...\n");
-	char* fr_name = "/home/test/Downloads/demo/demo/demo1/quote.sh";
+	char* fr_name = "quote.sh";
 	FILE *fr = fopen(fr_name, "a");
 	if(fr == NULL)
 		printf("[Client] File %s Cannot be opened.\n", fr_name);
@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
 	printf("[Client] transfering quote and resultant files to server!\n");
 	printf("[Client] transfering quote file to server!\n");
 
-	char* fs1_name = "/home/test/Downloads/demo/demo/demo1/quote.out";
+	char* fs1_name = "quote.out";
 		char sdbuf1[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs1_name);
 		FILE *fs1 = fopen(fs1_name, "r");
@@ -146,9 +146,9 @@ int main(int argc, char *argv[])
 		}
 		printf("[Client] Sent File %s to server!\n", fs1_name);
 
-	printf("[Client] transfering pcrs.out file to server!\n");
+	/*printf("[Client] transfering pcrs.out file to server!\n");
 
-		char* fs2_name = "/home/test/Downloads/demo/demo/demo1/pcrs.out";
+		char* fs2_name = "/`pwd`/pcrs.out";
 		char sdbuf2[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs2_name);
 		FILE *fs2 = fopen(fs2_name, "r");
@@ -170,11 +170,11 @@ int main(int argc, char *argv[])
 		    bzero(sdbuf2, LENGTH);
 		}
 		printf("[Client] Sent File %s to server!\n", fs2_name);
-
+		*/
 
 	printf("[Client] transfering sig.out file to server!\n");
 
-		char* fs3_name = "/home/test/Downloads/demo/demo/demo1/sig.out";
+		char* fs3_name = "sig.out";
 		char sdbuf3[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs3_name);
 		FILE *fs3 = fopen(fs3_name, "r");
@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
 
 	printf("[Client] transfering akpub.pem file to server!\n");
 
-		char* fs4_name = "/home/test/Downloads/demo/demo/demo1/akpub.pem";
+		char* fs4_name = "akpub.pem";
 		char sdbuf4[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs4_name);
 		FILE *fs4 = fopen(fs4_name, "r");
@@ -226,7 +226,7 @@ int main(int argc, char *argv[])
 
 	printf("[Client] transfering result file to server!\n");
 
-		char* fs5_name = "/home/test/Downloads/demo/demo/demo1/result";
+		char* fs5_name = "result";
 		char sdbuf5[LENGTH]; 
 		printf("[Client] Sending %s to the Server... \n", fs5_name);
 		FILE *fs5 = fopen(fs5_name, "r");
