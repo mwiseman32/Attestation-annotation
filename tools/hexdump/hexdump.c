@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	  fp = fopen(argv[1], "r");
 	  fseek(fp, 0L, SEEK_END);
           int sz = ftell(fp);
-	  FILE *out_file= fopen("result/hexdump.txt", "w");
+	  FILE *out_file= fopen("hexdump.txt", "w");
           dumphex(fp,sz,out_file);
           fclose(out_file);
 	  fclose(fp);
