@@ -45,7 +45,7 @@
 #define IMA_TLV_CONTENT	7
 
 /* TCG Digest Types */
-#define IMA_TLV_DIGEST_SHA1	4
+#define IMA_TLV_DIGEST_SHA1	2
 #define IMA_TLV_DIGEST_SHA256	8
 
 /* IMA Specific Content Types */
